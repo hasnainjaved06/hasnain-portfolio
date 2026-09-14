@@ -188,7 +188,7 @@ export default function OpenGraphImage() {
                 fontWeight: 600,
               }}
             >
-              hasnain-portfolio-iliac.vercel.app
+              Data Analytics • BI • Reporting
             </div>
           </div>
         </div>

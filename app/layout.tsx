@@ -14,7 +14,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://hasnain-portfolio-iliac.vercel.app";
+const siteUrl =
+  "https://hasnain-javed-analytics-git-main-hasnain-ab08.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -57,7 +58,6 @@ export const metadata: Metadata = {
 
   creator: "Hasnain Javed",
   publisher: "Hasnain Javed",
-
   applicationName: "Hasnain Javed Portfolio",
 
   alternates: {
