@@ -29,11 +29,18 @@ const stats = [
   },
 ];
 
+const skills = [
+  "Power BI",
+  "SQL",
+  "DAX",
+  "Python",
+  "Reporting Automation",
+  "Process Analytics",
+];
+
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pb-16 pt-28 sm:pt-30 lg:pb-20 lg:pt-32">
-      {/* BACKGROUND */}
-
+    <section className="relative overflow-hidden pb-12 pt-12 sm:pb-16 sm:pt-16 lg:pb-20 lg:pt-24">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-72 top-0 h-[720px] w-[720px] rounded-full bg-blue-600/[0.085] blur-3xl" />
 
@@ -52,27 +59,20 @@ export default function Hero() {
       </div>
 
       <div className="site-container relative">
-        <div className="grid items-center gap-12 xl:grid-cols-[1.1fr_.9fr] xl:gap-14">
-          {/* LEFT CONTENT */}
-
+        <div className="grid items-center gap-9 xl:grid-cols-[1.1fr_.9fr] xl:gap-14">
           <div>
-            {/* STATUS */}
-
-            <div className="inline-flex items-center gap-3 rounded-full border border-green-400/15 bg-green-400/[0.035] px-4 py-2">
+            <div className="inline-flex items-center gap-2 rounded-full border border-green-400/15 bg-green-400/[0.035] px-3 py-1.5 sm:gap-3 sm:px-4 sm:py-2">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-50" />
-
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-green-400" />
               </span>
 
-              <span className="font-mono text-[8px] font-semibold uppercase tracking-[0.16em] text-green-300">
+              <span className="font-mono text-[7px] font-semibold uppercase tracking-[0.14em] text-green-300 sm:text-[8px] sm:tracking-[0.16em]">
                 Open to Data & BI Opportunities
               </span>
             </div>
 
-            {/* HEADLINE */}
-
-            <h1 className="mt-6 max-w-[820px] text-[clamp(3.25rem,5.3vw,5.4rem)] font-bold leading-[0.9] tracking-[-0.065em] text-white">
+            <h1 className="mt-5 max-w-[820px] text-[clamp(2.65rem,12vw,4.1rem)] font-bold leading-[0.93] tracking-[-0.06em] text-white sm:mt-6 sm:text-[clamp(3.25rem,8vw,5.4rem)] lg:leading-[0.9]">
               Turning Data
               <br />
               Into{" "}
@@ -83,78 +83,61 @@ export default function Hero() {
               Decisions.
             </h1>
 
-            {/* DESCRIPTION */}
-
-            <p className="mt-6 max-w-[700px] text-[0.98rem] leading-7 text-slate-400">
+            <p className="mt-5 max-w-[700px] text-[0.88rem] leading-6 text-slate-400 sm:mt-6 sm:text-[0.98rem] sm:leading-7">
               I&apos;m Hasnain Javed, a Data Analyst and Business
               Intelligence professional with 5+ years of experience
               transforming complex data into clear reporting,
               actionable insights and decision-ready dashboards.
             </p>
 
-            {/* ROLE CHIPS */}
-
-            <div className="mt-5 flex flex-wrap gap-2">
-              {[
-                "Power BI",
-                "SQL",
-                "DAX",
-                "Python",
-                "Reporting Automation",
-                "Process Analytics",
-              ].map((skill) => (
+            <div className="mt-4 flex flex-wrap gap-2 sm:mt-5">
+              {skills.map((skill) => (
                 <span
                   key={skill}
-                  className="rounded-full border border-slate-400/10 bg-white/[0.025] px-4 py-2 text-[8px] font-medium text-slate-400"
+                  className="rounded-full border border-slate-400/10 bg-white/[0.025] px-3 py-1.5 text-[7px] font-medium text-slate-400 sm:px-4 sm:py-2 sm:text-[8px]"
                 >
                   {skill}
                 </span>
               ))}
             </div>
 
-            {/* CTA */}
-
-            <div className="mt-7 flex flex-wrap gap-3">
+            <div className="mt-5 grid grid-cols-2 gap-2.5 sm:mt-7 sm:flex sm:flex-wrap sm:gap-3">
               <Link
                 href="/projects"
-                className="btn-primary"
+                className="btn-primary w-full px-3 text-[0.78rem] sm:w-auto sm:px-5 sm:text-[0.92rem]"
               >
                 Explore My Projects
-                <ArrowRight size={16} />
+                <ArrowRight size={15} />
               </Link>
 
               <Link
                 href="/contact"
-                className="btn-secondary"
+                className="btn-secondary w-full px-3 text-[0.78rem] sm:w-auto sm:px-5 sm:text-[0.92rem]"
               >
                 Let&apos;s Talk
-                <ArrowRight size={15} />
+                <ArrowRight size={14} />
               </Link>
             </div>
 
-            {/* STATS */}
-
-            <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            <div className="mt-5 grid grid-cols-2 gap-2.5 sm:mt-8 sm:grid-cols-4 sm:gap-3">
               {stats.map((stat) => (
                 <article
                   key={stat.label}
-                  className="rounded-2xl border border-slate-400/10 bg-white/[0.018] p-4 transition duration-300 hover:border-blue-400/25 hover:bg-blue-400/[0.025]"
+                  className="rounded-xl border border-slate-400/10 bg-white/[0.018] p-3.5 transition duration-300 hover:border-blue-400/25 hover:bg-blue-400/[0.025] sm:rounded-2xl sm:p-4"
                 >
-                  <strong className="block text-2xl font-bold tracking-[-0.04em] text-white">
+                  <strong className="block text-xl font-bold tracking-[-0.04em] text-white sm:text-2xl">
                     {stat.value}
                   </strong>
 
-                  <p className="mt-2 text-[7px] leading-4 text-slate-600">
+                  <p className="mt-1.5 text-[7px] leading-4 text-slate-600 sm:mt-2">
                     {stat.label}
                   </p>
                 </article>
               ))}
             </div>
 
-            {/* MINI VALUE STRIP */}
-
-            <div className="mt-6 flex flex-wrap items-center gap-x-7 gap-y-3 border-t border-slate-400/10 pt-5">
-              <div className="flex items-center gap-2 text-[8px] text-slate-500">
+            <div className="mt-5 grid grid-cols-1 gap-2.5 border-t border-slate-400/10 pt-4 min-[390px]:grid-cols-3 sm:mt-6 sm:flex sm:flex-wrap sm:items-center sm:gap-x-7 sm:gap-y-3 sm:pt-5">
+              <div className="flex items-center gap-2 text-[7px] text-slate-500 sm:text-[8px]">
                 <BarChart3
                   size={13}
                   className="text-sky-400"
@@ -162,7 +145,7 @@ export default function Hero() {
                 Business Intelligence
               </div>
 
-              <div className="flex items-center gap-2 text-[8px] text-slate-500">
+              <div className="flex items-center gap-2 text-[7px] text-slate-500 sm:text-[8px]">
                 <Database
                   size={13}
                   className="text-cyan-400"
@@ -170,7 +153,7 @@ export default function Hero() {
                 Data Analysis
               </div>
 
-              <div className="flex items-center gap-2 text-[8px] text-slate-500">
+              <div className="flex items-center gap-2 text-[7px] text-slate-500 sm:text-[8px]">
                 <BriefcaseBusiness
                   size={13}
                   className="text-violet-400"
@@ -180,10 +163,8 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* PROFILE VISUAL */}
-
-          <div className="relative mx-auto w-full max-w-[470px] xl:mx-0 xl:ml-auto">
-            <div className="mb-4 flex items-center justify-end gap-2 font-mono text-[7px] uppercase tracking-[0.16em] text-slate-600">
+          <div className="relative mx-auto mt-2 w-full max-w-[470px] sm:mt-4 xl:mx-0 xl:ml-auto xl:mt-0">
+            <div className="mb-3 flex items-center justify-end gap-2 font-mono text-[7px] uppercase tracking-[0.16em] text-slate-600 sm:mb-4">
               <Sparkles
                 size={12}
                 className="text-cyan-400"
