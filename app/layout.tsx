@@ -64,6 +64,10 @@ export const metadata: Metadata = {
     canonical: "/",
   },
 
+  verification: {
+    google: "Jm5jmdlQ5zO1eJAVtKkAdVGIIQ0LghsEz-PVsH7SVrI",
+  },
+
   openGraph: {
     type: "website",
     locale: "en_US",
