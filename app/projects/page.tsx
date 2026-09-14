@@ -56,9 +56,7 @@ export default function ProjectsPage() {
           HERO
       ===================================================== */}
 
-      <section className="relative overflow-hidden pb-10 pt-20 sm:pt-24 lg:pb-14 lg:pt-24">
-        {/* GRID */}
-
+      <section className="relative overflow-hidden pb-10 pt-16 sm:pt-20 lg:pb-14 lg:pt-24">
         <div
           className="pointer-events-none absolute inset-0 opacity-[0.11]"
           style={{
@@ -75,15 +73,13 @@ export default function ProjectsPage() {
         <div className="pointer-events-none absolute -right-48 top-10 h-[600px] w-[600px] rounded-full bg-cyan-500/[0.055] blur-3xl" />
 
         <div className="site-container relative">
-          <div className="grid gap-10 xl:grid-cols-[1.08fr_.92fr] xl:items-end xl:gap-14">
-            {/* COPY */}
-
+          <div className="grid gap-8 xl:grid-cols-[1.08fr_.92fr] xl:items-end xl:gap-14">
             <div className="max-w-[820px]">
               <div className="eyebrow">
                 Analytics Portfolio
               </div>
 
-              <h1 className="mt-5 text-[clamp(3.2rem,5.8vw,6rem)] font-bold leading-[0.93] tracking-[-0.06em] text-white">
+              <h1 className="mt-5 text-[clamp(2.7rem,12vw,6rem)] font-bold leading-[0.94] tracking-[-0.06em] text-white sm:text-[clamp(3.2rem,5.8vw,6rem)] sm:leading-[0.93]">
                 Projects Built for{" "}
 
                 <span className="gradient-text">
@@ -91,24 +87,24 @@ export default function ProjectsPage() {
                 </span>
               </h1>
 
-              <p className="mt-6 max-w-[720px] text-[1rem] leading-8 text-slate-400">
+              <p className="mt-5 max-w-[720px] text-[0.9rem] leading-7 text-slate-400 sm:mt-6 sm:text-[1rem] sm:leading-8">
                 Completed business intelligence projects demonstrating
                 data modeling, KPI design, analytical logic, dashboard
                 development and decision-focused reporting.
               </p>
 
-              <div className="mt-7 flex flex-wrap gap-3">
+              <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-7 sm:flex sm:flex-wrap">
                 <a
                   href="#case-studies"
-                  className="btn-primary"
+                  className="btn-primary w-full px-3 text-[0.76rem] sm:w-auto sm:px-5 sm:text-[0.92rem]"
                 >
                   Explore Case Studies
-                  <ArrowRight size={16} />
+                  <ArrowRight size={15} />
                 </a>
 
                 <Link
                   href="/contact"
-                  className="btn-secondary"
+                  className="btn-secondary w-full px-3 text-[0.76rem] sm:w-auto sm:px-5 sm:text-[0.92rem]"
                 >
                   Let&apos;s Connect
                 </Link>
@@ -118,38 +114,38 @@ export default function ProjectsPage() {
             {/* PORTFOLIO SUMMARY */}
 
             <div className="grid grid-cols-2 gap-3">
-              <article className="glass-card p-5">
+              <article className="glass-card p-4 sm:p-5">
                 <p className="font-mono text-[7px] uppercase tracking-[0.16em] text-slate-600">
                   Analytics Work
                 </p>
 
-                <strong className="mt-3 block text-3xl font-bold text-sky-400">
+                <strong className="mt-2 block text-2xl font-bold text-sky-400 sm:mt-3 sm:text-3xl">
                   8+
                 </strong>
 
-                <p className="mt-2 text-[9px] leading-5 text-slate-500">
+                <p className="mt-2 text-[8px] leading-4 text-slate-500 sm:text-[9px] sm:leading-5">
                   Analytics projects across professional, learning
                   and portfolio work.
                 </p>
               </article>
 
-              <article className="glass-card p-5">
+              <article className="glass-card p-4 sm:p-5">
                 <p className="font-mono text-[7px] uppercase tracking-[0.16em] text-slate-600">
                   Published Cases
                 </p>
 
-                <strong className="mt-3 block text-3xl font-bold text-cyan-400">
+                <strong className="mt-2 block text-2xl font-bold text-cyan-400 sm:mt-3 sm:text-3xl">
                   {String(featuredProjects.length).padStart(2, "0")}
                 </strong>
 
-                <p className="mt-2 text-[9px] leading-5 text-slate-500">
+                <p className="mt-2 text-[8px] leading-4 text-slate-500 sm:text-[9px] sm:leading-5">
                   Completed case studies currently available for
                   detailed review.
                 </p>
               </article>
 
-              <article className="glass-card col-span-2 flex items-center gap-4 p-5">
-                <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-green-400/15 bg-green-400/[0.05] text-green-300">
+              <article className="glass-card col-span-2 flex items-center gap-4 p-4 sm:p-5">
+                <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-green-400/15 bg-green-400/[0.05] text-green-300 sm:h-11 sm:w-11">
                   <CheckCircle2 size={18} />
                 </div>
 
@@ -158,11 +154,11 @@ export default function ProjectsPage() {
                     Portfolio Standard
                   </p>
 
-                  <p className="mt-1 text-sm font-semibold text-white">
+                  <p className="mt-1 text-[11px] font-semibold text-white sm:text-sm">
                     Real dashboards. Complete case studies.
                   </p>
 
-                  <p className="mt-1 text-[9px] text-slate-500">
+                  <p className="mt-1 text-[8px] leading-4 text-slate-500 sm:text-[9px]">
                     Published projects include real Power BI screenshots
                     and documented analytical thinking.
                   </p>
@@ -186,7 +182,7 @@ export default function ProjectsPage() {
               return (
                 <article
                   key={capability.title}
-                  className="flex items-center gap-4 bg-[#07111f] p-5"
+                  className="flex items-center gap-4 bg-[#07111f] p-4 sm:p-5"
                 >
                   <div className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-blue-400/15 bg-blue-500/[0.07] text-sky-400">
                     <Icon size={18} />
@@ -217,8 +213,6 @@ export default function ProjectsPage() {
         className="scroll-mt-24 py-10 sm:py-12 lg:py-14"
       >
         <div className="site-container">
-          {/* HEADER */}
-
           <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-[770px]">
               <div className="eyebrow">
@@ -261,211 +255,225 @@ export default function ProjectsPage() {
           {/* PROJECTS */}
 
           <div className="mt-8 space-y-7">
-            {featuredProjects.map(
-              (project, index) => {
-                const isFinance =
-                  project.slug ===
-                  "corporate-finance-fpa-command-center";
+            {featuredProjects.map((project, index) => {
+              const isFinance =
+                project.slug ===
+                "corporate-finance-fpa-command-center";
 
-                const media = isFinance
-                  ? portfolioMedia.finance
-                  : portfolioMedia.atm;
+              const media = isFinance
+                ? portfolioMedia.finance
+                : portfolioMedia.atm;
 
-                return (
-                  <article
-                    key={project.slug}
-                    className="group relative overflow-hidden rounded-[30px] border border-slate-400/10 bg-[linear-gradient(135deg,rgba(12,27,46,.96),rgba(5,14,26,.99))] shadow-[0_28px_90px_rgba(0,0,0,.22)] transition duration-300 hover:border-blue-400/25"
+              const copyColumnClass =
+                index % 2 === 0
+                  ? "xl:col-start-2"
+                  : "xl:col-start-1";
+
+              const mediaColumnClass =
+                index % 2 === 0
+                  ? "xl:col-start-1 xl:border-r"
+                  : "xl:col-start-2 xl:border-l";
+
+              return (
+                <article
+                  key={project.slug}
+                  className="group relative overflow-hidden rounded-[26px] border border-slate-400/10 bg-[linear-gradient(135deg,rgba(12,27,46,.96),rgba(5,14,26,.99))] shadow-[0_28px_90px_rgba(0,0,0,.22)] transition duration-300 hover:border-blue-400/25 sm:rounded-[30px]"
+                >
+                  <span className="pointer-events-none absolute -right-5 -top-14 font-mono text-[10rem] font-black leading-none tracking-[-0.08em] text-white/[0.018] sm:text-[14rem]">
+                    0{index + 1}
+                  </span>
+
+                  <div
+                    className={`relative z-10 grid ${
+                      index % 2 === 0
+                        ? "xl:grid-cols-[1.16fr_.84fr]"
+                        : "xl:grid-cols-[.84fr_1.16fr]"
+                    }`}
                   >
-                    {/* HUGE NUMBER */}
-
-                    <span className="pointer-events-none absolute -right-5 -top-14 font-mono text-[11rem] font-black leading-none tracking-[-0.08em] text-white/[0.018] sm:text-[14rem]">
-                      0{index + 1}
-                    </span>
+                    {/* =================================================
+                        PROJECT INTRO
+                        Mobile: first
+                        Desktop: same copy column as before
+                    ================================================= */}
 
                     <div
-                      className={`relative z-10 grid ${
-                        index % 2 === 0
-                          ? "xl:grid-cols-[1.16fr_.84fr]"
-                          : "xl:grid-cols-[.84fr_1.16fr]"
-                      }`}
+                      className={`order-1 px-5 pb-4 pt-6 sm:px-8 sm:pb-5 sm:pt-8 lg:px-9 ${copyColumnClass} xl:row-start-1 xl:self-end xl:px-9 xl:pb-3 xl:pt-9`}
                     >
-                      {/* REAL DASHBOARD MEDIA */}
+                      <div className="flex flex-wrap items-center gap-3">
+                        <span className="font-mono text-[8px] font-bold uppercase tracking-[0.18em] text-cyan-400">
+                          Case Study {project.number}
+                        </span>
 
-                      <div
-                        className={`border-slate-400/10 p-4 sm:p-6 ${
-                          index % 2 === 1
-                            ? "xl:order-2 xl:border-l"
-                            : "xl:border-r"
-                        }`}
-                      >
-                        {/* BROWSER FRAME */}
+                        <span className="inline-flex items-center gap-2 rounded-full border border-green-400/15 bg-green-400/[0.04] px-3 py-1.5 text-[8px] font-semibold text-green-300">
+                          <CheckCircle2 size={11} />
+                          Completed
+                        </span>
+                      </div>
 
-                        <div className="overflow-hidden rounded-[23px] border border-blue-400/15 bg-[#030a12] shadow-[0_24px_70px_rgba(0,0,0,.42)]">
-                          <div className="flex h-10 items-center justify-between border-b border-white/[0.06] bg-[#071321] px-4">
-                            <div className="flex items-center gap-1.5">
-                              <span className="h-2 w-2 rounded-full bg-red-400/70" />
-                              <span className="h-2 w-2 rounded-full bg-amber-300/70" />
-                              <span className="h-2 w-2 rounded-full bg-green-400/70" />
-                            </div>
+                      <p className="mt-4 font-mono text-[7px] uppercase tracking-[0.17em] text-slate-600 sm:mt-5 sm:text-[8px]">
+                        {project.category}
+                      </p>
 
-                            <div className="flex items-center gap-2">
-                              <BarChart3
-                                size={12}
-                                className="text-cyan-400"
-                              />
+                      <h2 className="mt-2.5 text-[clamp(1.75rem,9vw,3.2rem)] font-bold leading-[1.03] tracking-[-0.045em] text-white sm:mt-3 sm:text-[clamp(2rem,3.4vw,3.2rem)]">
+                        {project.title}
+                      </h2>
 
-                              <span className="font-mono text-[7px] uppercase tracking-[0.14em] text-slate-600">
-                                Power BI • Project 0{index + 1}
-                              </span>
-                            </div>
+                      <p className="mt-4 max-w-[600px] text-[10px] leading-5 text-slate-400 sm:mt-5 sm:text-[11px] sm:leading-6">
+                        {project.description}
+                      </p>
+                    </div>
+
+                    {/* =================================================
+                        DASHBOARD MEDIA
+                        Mobile: second
+                        Desktop: original media column
+                    ================================================= */}
+
+                    <div
+                      className={`order-2 border-slate-400/10 px-4 py-4 sm:p-6 ${mediaColumnClass} xl:row-span-2 xl:row-start-1 xl:p-6`}
+                    >
+                      <div className="overflow-hidden rounded-[18px] border border-blue-400/15 bg-[#030a12] shadow-[0_24px_70px_rgba(0,0,0,.42)] sm:rounded-[23px]">
+                        <div className="flex h-9 items-center justify-between border-b border-white/[0.06] bg-[#071321] px-3 sm:h-10 sm:px-4">
+                          <div className="flex items-center gap-1.5">
+                            <span className="h-2 w-2 rounded-full bg-red-400/70" />
+                            <span className="h-2 w-2 rounded-full bg-amber-300/70" />
+                            <span className="h-2 w-2 rounded-full bg-green-400/70" />
                           </div>
 
-                          <div className="p-2 sm:p-3">
-                            <PortfolioImage
-                              src={media.hero}
-                              alt={`${project.title} dashboard overview`}
-                              label={`Case Study 0${index + 1}`}
-                              aspectClass="aspect-[16/9]"
-                              priority={index === 0}
+                          <div className="flex items-center gap-2">
+                            <BarChart3
+                              size={12}
+                              className="text-cyan-400"
                             />
+
+                            <span className="font-mono text-[6px] uppercase tracking-[0.12em] text-slate-600 sm:text-[7px] sm:tracking-[0.14em]">
+                              Power BI • Project 0{index + 1}
+                            </span>
                           </div>
                         </div>
 
-                        {/* REAL SCREENSHOT PREVIEWS */}
+                        <div className="p-2 sm:p-3">
+                          <PortfolioImage
+                            src={media.hero}
+                            alt={`${project.title} dashboard overview`}
+                            label={`Case Study 0${index + 1}`}
+                            aspectClass="aspect-[16/9]"
+                            priority={index === 0}
+                          />
+                        </div>
+                      </div>
 
-                        <div className="mt-3 grid grid-cols-3 gap-2">
-                          {media.screenshots
-                            .slice(0, 3)
-                            .map((screen, screenIndex) => (
+                      {/* SCREENSHOT PREVIEWS */}
+
+                      <div className="mt-3 grid grid-cols-3 gap-2">
+                        {media.screenshots
+                          .slice(0, 3)
+                          .map((screen, screenIndex) => (
+                            <div
+                              key={screen.src}
+                              className="relative overflow-hidden rounded-lg border border-slate-400/10 bg-[#06101d] p-1 sm:rounded-xl sm:p-1.5"
+                            >
+                              <PortfolioImage
+                                src={screen.src}
+                                alt={screen.alt}
+                                label={screen.label}
+                                aspectClass="aspect-[16/9]"
+                              />
+
+                              <div className="absolute inset-x-1 bottom-1 rounded-b-[7px] bg-gradient-to-t from-[#02070d]/95 to-transparent px-1.5 pb-1.5 pt-4 sm:inset-x-1.5 sm:bottom-1.5 sm:rounded-b-[10px] sm:px-2 sm:pb-2 sm:pt-5">
+                                <p className="truncate text-[5px] font-medium text-slate-300 sm:text-[6px]">
+                                  {screen.label}
+                                </p>
+                              </div>
+
+                              <span className="absolute right-1.5 top-1.5 rounded-md border border-white/10 bg-[#06101d]/80 px-1 py-0.5 font-mono text-[5px] text-slate-500 backdrop-blur-md sm:right-2 sm:top-2 sm:px-1.5 sm:py-1 sm:text-[6px]">
+                                0{screenIndex + 1}
+                              </span>
+                            </div>
+                          ))}
+                      </div>
+
+                      {/* SCREEN COUNT */}
+
+                      <div className="mt-3 flex items-center justify-between gap-3 rounded-xl border border-slate-400/10 bg-white/[0.015] px-3 py-2.5 sm:px-4 sm:py-3">
+                        <div className="flex min-w-0 items-center gap-2">
+                          <Layers3
+                            size={13}
+                            className="shrink-0 text-cyan-400"
+                          />
+
+                          <span className="truncate text-[7px] text-slate-500 sm:text-[8px]">
+                            Complete dashboard experience
+                          </span>
+                        </div>
+
+                        <span className="shrink-0 font-mono text-[7px] font-semibold text-sky-400 sm:text-[8px]">
+                          {media.screenshots.length} Views
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* =================================================
+                        PROJECT DETAILS
+                        Mobile: third
+                        Desktop: directly beneath intro copy
+                    ================================================= */}
+
+                    <div
+                      className={`order-3 px-5 pb-6 pt-4 sm:px-8 sm:pb-8 sm:pt-5 lg:px-9 ${copyColumnClass} xl:row-start-2 xl:self-start xl:px-9 xl:pb-9 xl:pt-3`}
+                    >
+                      {/* TECHNOLOGY */}
+
+                      <div className="flex flex-wrap gap-2">
+                        {project.tools.map((tool) => (
+                          <span
+                            key={tool}
+                            className="rounded-lg border border-blue-400/10 bg-blue-500/[0.03] px-2.5 py-1.5 font-mono text-[7px] font-medium text-sky-300 sm:px-3 sm:py-2 sm:text-[8px]"
+                          >
+                            {tool}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* HIGHLIGHTS */}
+
+                      <div className="mt-5 sm:mt-6">
+                        <p className="font-mono text-[7px] uppercase tracking-[0.16em] text-slate-600">
+                          Analytical Coverage
+                        </p>
+
+                        <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                          {project.highlights
+                            .slice(0, 4)
+                            .map((highlight) => (
                               <div
-                                key={screen.src}
-                                className="relative overflow-hidden rounded-xl border border-slate-400/10 bg-[#06101d] p-1.5"
+                                key={highlight}
+                                className="flex items-start gap-3 rounded-xl border border-slate-400/10 bg-white/[0.015] px-3 py-2.5 sm:px-4 sm:py-3"
                               >
-                                <PortfolioImage
-                                  src={screen.src}
-                                  alt={screen.alt}
-                                  label={screen.label}
-                                  aspectClass="aspect-[16/9]"
-                                />
+                                <span className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,.5)]" />
 
-                                <div className="absolute inset-x-1.5 bottom-1.5 rounded-b-[10px] bg-gradient-to-t from-[#02070d]/95 to-transparent px-2 pb-2 pt-5">
-                                  <p className="truncate text-[6px] font-medium text-slate-300">
-                                    {screen.label}
-                                  </p>
-                                </div>
-
-                                <span className="absolute right-2 top-2 rounded-md border border-white/10 bg-[#06101d]/80 px-1.5 py-1 font-mono text-[6px] text-slate-500 backdrop-blur-md">
-                                  0{screenIndex + 1}
+                                <span className="text-[8px] leading-4 text-slate-400 sm:text-[9px] sm:leading-5">
+                                  {highlight}
                                 </span>
                               </div>
                             ))}
                         </div>
-
-                        {/* SCREEN COUNT */}
-
-                        <div className="mt-3 flex items-center justify-between rounded-xl border border-slate-400/10 bg-white/[0.015] px-4 py-3">
-                          <div className="flex items-center gap-2">
-                            <Layers3
-                              size={13}
-                              className="text-cyan-400"
-                            />
-
-                            <span className="text-[8px] text-slate-500">
-                              Complete dashboard experience
-                            </span>
-                          </div>
-
-                          <span className="font-mono text-[8px] font-semibold text-sky-400">
-                            {media.screenshots.length} Views
-                          </span>
-                        </div>
                       </div>
 
-                      {/* PROJECT COPY */}
-
-                      <div
-                        className={`flex flex-col justify-center p-6 sm:p-8 lg:p-9 ${
-                          index % 2 === 1
-                            ? "xl:order-1"
-                            : ""
-                        }`}
-                      >
-                        <div className="flex flex-wrap items-center gap-3">
-                          <span className="font-mono text-[8px] font-bold uppercase tracking-[0.18em] text-cyan-400">
-                            Case Study {project.number}
-                          </span>
-
-                          <span className="inline-flex items-center gap-2 rounded-full border border-green-400/15 bg-green-400/[0.04] px-3 py-1.5 text-[8px] font-semibold text-green-300">
-                            <CheckCircle2 size={11} />
-                            Completed
-                          </span>
-                        </div>
-
-                        <p className="mt-5 font-mono text-[8px] uppercase tracking-[0.17em] text-slate-600">
-                          {project.category}
-                        </p>
-
-                        <h2 className="mt-3 text-[clamp(2rem,3.4vw,3.2rem)] font-bold leading-[1.03] tracking-[-0.045em] text-white">
-                          {project.title}
-                        </h2>
-
-                        <p className="mt-5 max-w-[600px] text-[11px] leading-6 text-slate-400">
-                          {project.description}
-                        </p>
-
-                        {/* TECHNOLOGY */}
-
-                        <div className="mt-6 flex flex-wrap gap-2">
-                          {project.tools.map((tool) => (
-                            <span
-                              key={tool}
-                              className="rounded-lg border border-blue-400/10 bg-blue-500/[0.03] px-3 py-2 font-mono text-[8px] font-medium text-sky-300"
-                            >
-                              {tool}
-                            </span>
-                          ))}
-                        </div>
-
-                        {/* HIGHLIGHTS */}
-
-                        <div className="mt-6">
-                          <p className="font-mono text-[7px] uppercase tracking-[0.16em] text-slate-600">
-                            Analytical Coverage
-                          </p>
-
-                          <div className="mt-3 grid gap-2 sm:grid-cols-2">
-                            {project.highlights
-                              .slice(0, 4)
-                              .map((highlight) => (
-                                <div
-                                  key={highlight}
-                                  className="flex items-start gap-3 rounded-xl border border-slate-400/10 bg-white/[0.015] px-4 py-3"
-                                >
-                                  <span className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,.5)]" />
-
-                                  <span className="text-[9px] leading-5 text-slate-400">
-                                    {highlight}
-                                  </span>
-                                </div>
-                              ))}
-                          </div>
-                        </div>
-
-                        <div className="mt-7">
-                          <Link
-                            href={`/projects/${project.slug}`}
-                            className="btn-primary"
-                          >
-                            Explore Full Case Study
-                            <ArrowRight size={15} />
-                          </Link>
-                        </div>
+                      <div className="mt-6 sm:mt-7">
+                        <Link
+                          href={`/projects/${project.slug}`}
+                          className="btn-primary w-full sm:w-auto"
+                        >
+                          Explore Full Case Study
+                          <ArrowRight size={15} />
+                        </Link>
                       </div>
                     </div>
-                  </article>
-                );
-              }
-            )}
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -564,7 +572,7 @@ export default function ProjectsPage() {
 
       <section className="py-10 sm:py-12 lg:py-14">
         <div className="site-container">
-          <div className="relative overflow-hidden rounded-[28px] border border-blue-400/20 bg-[linear-gradient(115deg,rgba(9,28,51,.97),rgba(8,22,42,.98),rgba(30,19,68,.72))] p-7 sm:p-9 lg:p-10">
+          <div className="relative overflow-hidden rounded-[24px] border border-blue-400/20 bg-[linear-gradient(115deg,rgba(9,28,51,.97),rgba(8,22,42,.98),rgba(30,19,68,.72))] p-6 sm:rounded-[28px] sm:p-9 lg:p-10">
             <div className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-violet-500/[0.12] blur-3xl" />
 
             <div className="relative grid gap-7 lg:grid-cols-[1fr_auto] lg:items-center">
@@ -573,7 +581,7 @@ export default function ProjectsPage() {
                   Work With Data
                 </div>
 
-                <h2 className="mt-4 text-[clamp(2rem,4vw,3.5rem)] font-bold leading-[1] tracking-[-0.05em] text-white">
+                <h2 className="mt-4 text-[clamp(1.9rem,9vw,3.5rem)] font-bold leading-[1] tracking-[-0.05em] text-white sm:text-[clamp(2rem,4vw,3.5rem)]">
                   Looking for Analytics That{" "}
 
                   <span className="gradient-text">
@@ -581,7 +589,7 @@ export default function ProjectsPage() {
                   </span>
                 </h2>
 
-                <p className="mt-4 text-sm leading-7 text-slate-400">
+                <p className="mt-4 text-[0.82rem] leading-6 text-slate-400 sm:text-sm sm:leading-7">
                   I&apos;m open to relevant Data Analyst, BI,
                   reporting and analytics opportunities.
                 </p>
@@ -589,7 +597,7 @@ export default function ProjectsPage() {
 
               <Link
                 href="/contact"
-                className="btn-primary"
+                className="btn-primary w-full sm:w-auto"
               >
                 Let&apos;s Connect
                 <ArrowRight size={16} />
