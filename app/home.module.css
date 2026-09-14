@@ -1,0 +1,71 @@
+.homePage {
+  position: relative;
+  overflow: clip;
+}
+
+/* =========================================================
+   HOMEPAGE SECTION RHYTHM
+   Keeps premium spacing without huge empty gaps.
+========================================================= */
+
+.heroSection > :global(section) {
+  padding-bottom: 42px !important;
+}
+
+.standardSection > :global(section) {
+  padding-top: 62px !important;
+  padding-bottom: 62px !important;
+}
+
+.compactSection > :global(section) {
+  padding-top: 48px !important;
+  padding-bottom: 48px !important;
+}
+
+.visualSection > :global(section) {
+  padding-top: 58px !important;
+  padding-bottom: 58px !important;
+}
+
+/* Remove unnecessary extra gaps when sections touch */
+
+.standardSection + .standardSection > :global(section),
+.standardSection + .compactSection > :global(section),
+.compactSection + .standardSection > :global(section),
+.compactSection + .compactSection > :global(section) {
+  padding-top: 54px !important;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1024px) {
+  .heroSection > :global(section) {
+    padding-bottom: 34px !important;
+  }
+
+  .standardSection > :global(section),
+  .visualSection > :global(section) {
+    padding-top: 52px !important;
+    padding-bottom: 52px !important;
+  }
+
+  .compactSection > :global(section) {
+    padding-top: 42px !important;
+    padding-bottom: 42px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection > :global(section) {
+    padding-bottom: 28px !important;
+  }
+
+  .standardSection > :global(section),
+  .visualSection > :global(section),
+  .compactSection > :global(section) {
+    padding-top: 38px !important;
+    padding-bottom: 38px !important;
+  }
+}

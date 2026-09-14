@@ -1,0 +1,43 @@
+﻿PORTFOLIO MEDIA LOCATIONS
+
+PROFILE PHOTO
+-------------
+public/portfolio/profile/
+
+Recommended final filename:
+hasnain-javed.jpg
+
+
+CORPORATE FINANCE & FP&A PROJECT
+--------------------------------
+public/portfolio/projects/finance/
+
+Recommended:
+overview.png
+budget-variance.png
+forecast.png
+scenario-planning.png
+
+
+PAKISTAN ATM PERFORMANCE PROJECT
+---------------------------------
+public/portfolio/projects/atm/
+
+Recommended:
+overview.png
+transactions.png
+revenue.png
+regional-performance.png
+
+
+IMPORTANT
+---------
+Files are not activated automatically.
+
+After the real images are added, update:
+
+data/portfolioMedia.ts
+
+with their /portfolio/... paths.
+
+Public Power BI URLs will also be added to that same file.
