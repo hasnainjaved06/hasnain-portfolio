@@ -26,6 +26,25 @@ type ProjectPageProps = {
   }>;
 };
 
+type ScaleStat = {
+  value: string;
+  label: string;
+  detail: string;
+};
+
+type DatasetItem = {
+  name: string;
+  rows: string;
+  detail: string;
+  layer: "Source" | "Analytical";
+};
+
+type PipelineStep = {
+  number: string;
+  title: string;
+  description: string;
+};
+
 type Project = {
   slug: string;
   number: string;
@@ -35,23 +54,31 @@ type Project = {
   description: string;
   overview: string;
   heroImage: string;
+
   screenshots: {
     src: string;
     title: string;
     description: string;
   }[];
+
   tools: string[];
   capabilities: string[];
   objectives: string[];
+
   process: {
     number: string;
     title: string;
     description: string;
   }[];
+
   highlights: {
     title: string;
     description: string;
   }[];
+
+  scaleStats?: ScaleStat[];
+  datasetFootprint?: DatasetItem[];
+  pipeline?: PipelineStep[];
 };
 
 const projects: Record<string, Project> = {
@@ -61,12 +88,16 @@ const projects: Record<string, Project> = {
     title: "Corporate Finance & FP&A Command Center",
     shortTitle: "Finance & FP&A",
     category: "Financial Analytics • Power BI • SQL",
+
     description:
       "A multi-page financial analytics solution designed to bring executive reporting, financial statements, working-capital analysis and scenario forecasting into one structured Power BI experience.",
+
     overview:
       "The project was developed as an end-to-end FP&A portfolio case study. SQL Server was used to structure the analytical foundation, while Power BI and DAX were used to build financial measures, statement views, KPI reporting and scenario-based forecasting.",
+
     heroImage:
       "/portfolio/projects/corporate-finance-fpa/finance-01.png",
+
     screenshots: [
       {
         src: "/portfolio/projects/corporate-finance-fpa/finance-01.png",
@@ -105,6 +136,7 @@ const projects: Record<string, Project> = {
           "Monthly forecast and budget comparison with scenario-oriented management reporting.",
       },
     ],
+
     tools: [
       "Power BI",
       "DAX",
@@ -115,6 +147,7 @@ const projects: Record<string, Project> = {
       "Financial Analytics",
       "Scenario Analysis",
     ],
+
     capabilities: [
       "Executive KPI Reporting",
       "Profit & Loss Analysis",
@@ -125,12 +158,14 @@ const projects: Record<string, Project> = {
       "Scenario Forecasting",
       "Time Intelligence",
     ],
+
     objectives: [
       "Create one consistent analytical layer for finance and FP&A reporting.",
       "Bring executive KPIs and detailed financial statements into a connected reporting experience.",
       "Support period comparisons, variance analysis and forward-looking scenario planning.",
       "Structure the model so financial measures can be reused consistently across report pages.",
     ],
+
     process: [
       {
         number: "01",
@@ -163,6 +198,7 @@ const projects: Record<string, Project> = {
           "Extended the model with base, optimistic and pessimistic forecasting views for planning analysis.",
       },
     ],
+
     highlights: [
       {
         title: "Executive Finance View",
@@ -193,12 +229,16 @@ const projects: Record<string, Project> = {
     title: "Pakistan ATM Performance Dashboard",
     shortTitle: "ATM Performance",
     category: "Banking Analytics • Power BI • DAX",
+
     description:
       "A banking analytics dashboard designed to evaluate ATM transaction activity, revenue performance and operational patterns through an executive-friendly Power BI experience.",
+
     overview:
       "The project transforms ATM-level source data into structured performance categories and interactive reporting. It focuses on making transaction and revenue behavior easier to compare across locations, performance ranges and operational segments.",
+
     heroImage:
       "/portfolio/projects/pakistan-atm/atm-01.png",
+
     screenshots: [
       {
         src: "/portfolio/projects/pakistan-atm/atm-01.png",
@@ -219,6 +259,7 @@ const projects: Record<string, Project> = {
           "Detailed visual analysis designed to surface differences in ATM performance across the dataset.",
       },
     ],
+
     tools: [
       "Power BI",
       "DAX",
@@ -227,6 +268,7 @@ const projects: Record<string, Project> = {
       "Data Modeling",
       "KPI Analysis",
     ],
+
     capabilities: [
       "ATM Performance Analysis",
       "Transaction Analysis",
@@ -237,12 +279,14 @@ const projects: Record<string, Project> = {
       "Operational Segmentation",
       "Executive Visualization",
     ],
+
     objectives: [
       "Create a clear executive view of ATM transaction and revenue performance.",
       "Convert raw values into meaningful performance bands for easier comparison.",
       "Make underperforming and stronger-performing ATM segments easier to identify.",
       "Present banking-operational data through a compact and decision-focused dashboard.",
     ],
+
     process: [
       {
         number: "01",
@@ -275,6 +319,7 @@ const projects: Record<string, Project> = {
           "Reviewed categories, measures and dashboard behavior to maintain consistent reporting across views.",
       },
     ],
+
     highlights: [
       {
         title: "Performance Ranges",
@@ -304,27 +349,32 @@ const projects: Record<string, Project> = {
     number: "03",
     title: "Customer Growth Analytics",
     shortTitle: "Customer Growth",
-    category: "Customer Analytics • Power BI • DAX",
+    category:
+      "Customer Analytics • Python • SQL Server • Power BI",
+
     description:
-      "A multi-page customer analytics solution designed to connect revenue performance, purchasing behavior, customer value, segmentation, retention and churn risk through one structured business intelligence experience.",
+      "An end-to-end customer analytics solution built across more than half a million source records to connect revenue performance, purchasing behavior, customer value, segmentation, retention and churn risk through Python, SQL Server and Power BI.",
+
     overview:
-      "The project brings together customer, order and revenue behavior with RFM segmentation, customer lifetime value, cohort retention and risk analysis. The reporting experience is structured across executive performance, customer intelligence and retention-focused views so decision-makers can move from high-level growth indicators into customer-level analytical detail.",
+      "This project was designed as a full customer-growth analytics workflow rather than only a visualization exercise. Eight operational source datasets were cleaned and transformed, customer-level analytical features were engineered for RFM segmentation, lifetime value, cohort retention and churn-risk analysis, and 13 datasets were validated through the SQL Server staging layer before the final Power BI reporting experience was developed.",
+
     heroImage:
       "/portfolio/projects/customer-growth-analytics/customer-growth-hero.png",
+
     screenshots: [
       {
         src:
           "/portfolio/projects/customer-growth-analytics/customer-growth-01.png",
         title: "Executive Overview",
         description:
-          "Executive-level view combining revenue, orders, customer activity, average order value, purchasing behavior and customer growth indicators.",
+          "Executive-level reporting combining revenue, orders, active customers, average order value, purchasing behavior and customer-growth performance.",
       },
       {
         src:
           "/portfolio/projects/customer-growth-analytics/customer-growth-02.png",
         title: "Customer Intelligence",
         description:
-          "Customer segmentation view combining RFM segments, CLV tiers, customer value distribution and geographic revenue analysis.",
+          "Customer intelligence layer combining RFM segmentation, customer lifetime value, customer-value tiers and geographic revenue analysis.",
       },
       {
         src:
@@ -334,84 +384,232 @@ const projects: Record<string, Project> = {
           "Retention-focused analysis covering cohort behavior, churn probability, revenue at risk, retention priority and high-risk customer monitoring.",
       },
     ],
+
     tools: [
       "Power BI",
       "DAX",
       "Power Query",
       "Python",
-      "SQL",
+      "pandas",
+      "SQL Server",
       "Data Modeling",
-      "RFM Analysis",
-      "CLV Analytics",
+      "RFM & CLV",
     ],
+
     capabilities: [
-      "Executive Customer KPIs",
+      "Executive Customer KPI Reporting",
       "Revenue & Order Analysis",
-      "RFM Segmentation",
+      "Python Feature Engineering",
+      "RFM Customer Segmentation",
       "Customer Lifetime Value",
-      "Customer Value Tiers",
-      "Cohort Retention",
+      "Cohort Retention Analysis",
       "Churn Risk Analysis",
       "Revenue-at-Risk Reporting",
     ],
+
     objectives: [
-      "Create one analytical view connecting customer growth, purchasing behavior and revenue performance.",
-      "Segment customers using RFM and lifetime-value perspectives to make customer groups easier to interpret.",
-      "Track retention behavior over time and identify customers or revenue exposed to higher risk.",
-      "Provide an executive-to-detail reporting flow across growth, customer intelligence and retention analysis.",
+      "Transform fragmented customer, order, payment, review, product, seller and geographic data into a validated analytical foundation.",
+      "Build reusable customer-level features that connect purchasing behavior, value, frequency and recency.",
+      "Segment customers through RFM and customer-lifetime-value analysis to support differentiated customer strategies.",
+      "Measure retention through cohort analysis and surface higher-risk customers through churn and revenue-at-risk reporting.",
+      "Deliver an executive-to-detail Power BI experience covering customer growth, customer intelligence, retention and risk.",
     ],
+
     process: [
       {
         number: "01",
-        title: "Data Preparation",
+        title: "Source Integration",
         description:
-          "Prepared and transformed customer, order and transaction-level data into structured analytical datasets for downstream reporting.",
+          "Integrated eight operational datasets covering customers, orders, order items, payments, reviews, products, sellers and geographic information.",
       },
       {
         number: "02",
-        title: "Customer Modeling",
+        title: "Python Preparation",
         description:
-          "Structured customer-level analytical fields and relationships required for reusable segmentation, value and retention analysis.",
+          "Used Python and pandas to clean, standardize and transform source data and create a reusable customer-level analytical feature layer.",
       },
       {
         number: "03",
-        title: "Analytical Features",
+        title: "Customer Analytics",
         description:
-          "Developed customer intelligence concepts including RFM segments, CLV tiers, retention measures and risk-oriented classifications.",
+          "Produced RFM segments, customer-lifetime-value analysis, cohort-retention outputs and churn-risk classifications for the customer population.",
       },
       {
         number: "04",
-        title: "DAX & KPI Layer",
+        title: "SQL Validation",
         description:
-          "Built reusable measures for revenue, customers, orders, repeat behavior, retention, customer value and risk reporting.",
+          "Loaded 13 datasets into SQL Server staging and validated processed CSV row counts against SQL table row counts before reporting.",
       },
       {
         number: "05",
-        title: "Dashboard Experience",
+        title: "Power BI Delivery",
         description:
-          "Designed three connected Power BI views covering executive performance, customer intelligence and retention and risk analysis.",
+          "Built the semantic reporting layer, DAX KPIs and three connected dashboard experiences for executive, customer and retention analysis.",
       },
     ],
+
     highlights: [
       {
-        title: "Customer Intelligence",
+        title: "Large-Scale Customer Data",
         description:
-          "Combines behavioral segmentation, customer value and revenue analysis to create a clearer view of the customer base.",
+          "The core operational source layer contains 569,703 records across eight customer, transaction and supporting datasets.",
       },
       {
-        title: "RFM & CLV",
+        title: "RFM & CLV Intelligence",
         description:
-          "Uses RFM segments and customer lifetime-value tiers to organize customers by behavior and commercial value.",
+          "Customer-level analytical outputs classify 93,358 profiles by behavior, recency, frequency, monetary value and lifetime value.",
       },
       {
-        title: "Retention Analysis",
+        title: "Retention Analytics",
         description:
-          "Cohort-based retention views make changes in customer activity easier to track across customer groups and periods.",
+          "Cohort-oriented retention reporting tracks how customer activity develops after acquisition across customer groups and periods.",
       },
       {
-        title: "Risk Visibility",
+        title: "Churn & Revenue Risk",
         description:
-          "Churn-risk and revenue-at-risk reporting helps surface customer segments that require closer attention.",
+          "Risk-oriented customer features help identify higher-risk customers and connect customer attrition exposure with commercial value.",
+      },
+    ],
+
+    scaleStats: [
+      {
+        value: "569,703",
+        label: "Core Source Rows",
+        detail:
+          "Across eight operational source datasets.",
+      },
+      {
+        value: "93,358",
+        label: "Customer Profiles",
+        detail:
+          "Customer-level analytical population.",
+      },
+      {
+        value: "13",
+        label: "Validated Datasets",
+        detail:
+          "Loaded and row-count validated in SQL Server staging.",
+      },
+      {
+        value: "3",
+        label: "Dashboard Views",
+        detail:
+          "Executive, intelligence and retention analysis.",
+      },
+    ],
+
+    datasetFootprint: [
+      {
+        name: "Customers",
+        rows: "99,441",
+        detail: "Customer master records",
+        layer: "Source",
+      },
+      {
+        name: "Orders",
+        rows: "99,441",
+        detail: "Order-level transactional records",
+        layer: "Source",
+      },
+      {
+        name: "Order Items",
+        rows: "112,650",
+        detail: "Product-level order activity",
+        layer: "Source",
+      },
+      {
+        name: "Payments",
+        rows: "103,886",
+        detail: "Payment transaction records",
+        layer: "Source",
+      },
+      {
+        name: "Reviews",
+        rows: "99,224",
+        detail: "Customer review records",
+        layer: "Source",
+      },
+      {
+        name: "Products",
+        rows: "32,951",
+        detail: "Product master data",
+        layer: "Source",
+      },
+      {
+        name: "Sellers",
+        rows: "3,095",
+        detail: "Seller master records",
+        layer: "Source",
+      },
+      {
+        name: "Geolocation",
+        rows: "19,015",
+        detail: "Geographic reference data",
+        layer: "Source",
+      },
+
+      {
+        name: "Customer Features",
+        rows: "93,358 × 34",
+        detail: "Engineered customer analytical features",
+        layer: "Analytical",
+      },
+      {
+        name: "RFM Segments",
+        rows: "93,358 × 25",
+        detail: "Recency, frequency and monetary segmentation",
+        layer: "Analytical",
+      },
+      {
+        name: "CLV Analysis",
+        rows: "93,358 × 32",
+        detail: "Customer lifetime-value analytical output",
+        layer: "Analytical",
+      },
+      {
+        name: "Churn Risk",
+        rows: "93,358 × 27",
+        detail: "Customer churn and risk features",
+        layer: "Analytical",
+      },
+      {
+        name: "Cohort Retention",
+        rows: "219 × 6",
+        detail: "Long-form cohort-retention output",
+        layer: "Analytical",
+      },
+    ],
+
+    pipeline: [
+      {
+        number: "01",
+        title: "Operational Sources",
+        description:
+          "Customer, order, item, payment, review, product, seller and geographic datasets form the operational source layer.",
+      },
+      {
+        number: "02",
+        title: "Python & pandas",
+        description:
+          "Cleaning, standardization, feature engineering and preparation of reusable customer-level analytical outputs.",
+      },
+      {
+        number: "03",
+        title: "SQL Server",
+        description:
+          "Processed datasets loaded into CustomerGrowthAnalyticsDB staging tables with source-to-SQL row-count validation.",
+      },
+      {
+        number: "04",
+        title: "Analytical Model",
+        description:
+          "Customer features, RFM, CLV, cohorts and churn-risk outputs organized for reusable business analysis.",
+      },
+      {
+        number: "05",
+        title: "Power BI & DAX",
+        description:
+          "Interactive KPI reporting delivered through Executive Overview, Customer Intelligence and Retention & Risk dashboards.",
       },
     ],
   },
@@ -450,6 +648,16 @@ export default async function ProjectDetailPage({
   if (!project) {
     notFound();
   }
+
+  const sourceDatasets =
+    project.datasetFootprint?.filter(
+      (dataset) => dataset.layer === "Source"
+    ) ?? [];
+
+  const analyticalDatasets =
+    project.datasetFootprint?.filter(
+      (dataset) => dataset.layer === "Analytical"
+    ) ?? [];
 
   return (
     <main>
@@ -639,10 +847,208 @@ export default async function ProjectDetailPage({
       </section>
 
       {/* =====================================================
+          PROJECT SCALE — PROJECT 03
+      ===================================================== */}
+
+      {project.scaleStats &&
+        project.datasetFootprint &&
+        project.pipeline && (
+          <section className="py-9 sm:py-12 lg:py-14">
+            <div className="site-container">
+              <div className="max-w-[820px]">
+                <div className="eyebrow">
+                  Project Scale & Architecture
+                </div>
+
+                <h2 className="section-title">
+                  Built on{" "}
+                  <span className="gradient-text">
+                    Real Analytical Volume.
+                  </span>
+                </h2>
+
+                <p className="section-description">
+                  The reporting layer is backed by a multi-stage
+                  customer analytics workflow covering operational
+                  source data, Python feature engineering, SQL Server
+                  validation and Power BI delivery.
+                </p>
+              </div>
+
+              {/* SCALE STATS */}
+
+              <div className="mt-7 grid grid-cols-2 gap-2.5 sm:mt-8 sm:gap-3 lg:grid-cols-4">
+                {project.scaleStats.map((stat) => (
+                  <article
+                    key={stat.label}
+                    className="relative overflow-hidden rounded-[18px] border border-blue-400/10 bg-[linear-gradient(145deg,rgba(12,27,46,.9),rgba(5,14,26,.98))] p-4 sm:rounded-[22px] sm:p-5"
+                  >
+                    <div className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-blue-500/[0.07] blur-2xl" />
+
+                    <strong className="relative block text-[1.35rem] font-bold tracking-[-0.04em] text-sky-400 sm:text-2xl">
+                      {stat.value}
+                    </strong>
+
+                    <p className="relative mt-2 text-[8px] font-semibold uppercase tracking-[0.11em] text-slate-300 sm:text-[9px]">
+                      {stat.label}
+                    </p>
+
+                    <p className="relative mt-2 text-[7px] leading-4 text-slate-500 sm:text-[8px]">
+                      {stat.detail}
+                    </p>
+                  </article>
+                ))}
+              </div>
+
+              {/* PIPELINE */}
+
+              <div className="mt-7 rounded-[22px] border border-slate-400/10 bg-white/[0.012] p-4 sm:mt-8 sm:rounded-[26px] sm:p-6">
+                <div className="flex items-center gap-3">
+                  <Workflow
+                    size={17}
+                    className="text-cyan-400"
+                  />
+
+                  <div>
+                    <p className="font-mono text-[7px] font-semibold uppercase tracking-[0.16em] text-cyan-400">
+                      End-to-End Pipeline
+                    </p>
+
+                    <h3 className="mt-1 text-sm font-semibold text-white sm:text-base">
+                      From source data to customer intelligence
+                    </h3>
+                  </div>
+                </div>
+
+                <div className="mt-5 grid gap-2.5 md:grid-cols-5">
+                  {project.pipeline.map((step) => (
+                    <article
+                      key={step.number}
+                      className="rounded-xl border border-slate-400/10 bg-[#07111f] p-4"
+                    >
+                      <span className="font-mono text-[7px] font-bold text-sky-400">
+                        {step.number}
+                      </span>
+
+                      <h4 className="mt-3 text-[10px] font-semibold text-white">
+                        {step.title}
+                      </h4>
+
+                      <p className="mt-2 text-[8px] leading-4 text-slate-500">
+                        {step.description}
+                      </p>
+                    </article>
+                  ))}
+                </div>
+              </div>
+
+              {/* DATASET FOOTPRINT */}
+
+              <div className="mt-7 grid gap-4 lg:grid-cols-2">
+                <article className="rounded-[22px] border border-slate-400/10 bg-[linear-gradient(145deg,rgba(12,27,46,.76),rgba(5,14,26,.96))] p-5 sm:p-6">
+                  <div className="flex items-center justify-between gap-4">
+                    <div>
+                      <p className="font-mono text-[7px] font-semibold uppercase tracking-[0.16em] text-cyan-400">
+                        Source Layer
+                      </p>
+
+                      <h3 className="mt-2 text-base font-semibold text-white">
+                        Operational Data
+                      </h3>
+                    </div>
+
+                    <span className="rounded-lg border border-blue-400/10 bg-blue-500/[0.03] px-3 py-2 font-mono text-[7px] text-sky-300">
+                      569,703 Rows
+                    </span>
+                  </div>
+
+                  <div className="mt-5 space-y-2">
+                    {sourceDatasets.map((dataset) => (
+                      <div
+                        key={dataset.name}
+                        className="flex items-center justify-between gap-4 rounded-xl border border-slate-400/10 bg-white/[0.015] px-3 py-2.5"
+                      >
+                        <div className="min-w-0">
+                          <p className="text-[9px] font-semibold text-slate-300">
+                            {dataset.name}
+                          </p>
+
+                          <p className="mt-0.5 truncate text-[7px] text-slate-600">
+                            {dataset.detail}
+                          </p>
+                        </div>
+
+                        <span className="shrink-0 font-mono text-[8px] font-semibold text-sky-400">
+                          {dataset.rows}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </article>
+
+                <article className="rounded-[22px] border border-slate-400/10 bg-[linear-gradient(145deg,rgba(12,27,46,.76),rgba(5,14,26,.96))] p-5 sm:p-6">
+                  <div className="flex items-center justify-between gap-4">
+                    <div>
+                      <p className="font-mono text-[7px] font-semibold uppercase tracking-[0.16em] text-violet-400">
+                        Analytical Layer
+                      </p>
+
+                      <h3 className="mt-2 text-base font-semibold text-white">
+                        Engineered Outputs
+                      </h3>
+                    </div>
+
+                    <span className="rounded-lg border border-violet-400/10 bg-violet-500/[0.03] px-3 py-2 font-mono text-[7px] text-violet-300">
+                      Customer-Level
+                    </span>
+                  </div>
+
+                  <div className="mt-5 space-y-2">
+                    {analyticalDatasets.map((dataset) => (
+                      <div
+                        key={dataset.name}
+                        className="flex items-center justify-between gap-4 rounded-xl border border-slate-400/10 bg-white/[0.015] px-3 py-2.5"
+                      >
+                        <div className="min-w-0">
+                          <p className="text-[9px] font-semibold text-slate-300">
+                            {dataset.name}
+                          </p>
+
+                          <p className="mt-0.5 truncate text-[7px] text-slate-600">
+                            {dataset.detail}
+                          </p>
+                        </div>
+
+                        <span className="shrink-0 font-mono text-[8px] font-semibold text-violet-300">
+                          {dataset.rows}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </article>
+              </div>
+
+              <div className="mt-4 flex gap-3 rounded-xl border border-green-400/10 bg-green-400/[0.025] px-4 py-3 sm:rounded-2xl">
+                <CheckCircle2
+                  size={15}
+                  className="mt-0.5 shrink-0 text-green-300"
+                />
+
+                <p className="text-[8px] leading-5 text-slate-400 sm:text-[9px]">
+                  All 13 processed datasets were loaded into SQL Server
+                  staging and checked against their source CSV row
+                  counts before the reporting layer was finalized.
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
+
+      {/* =====================================================
           OVERVIEW
       ===================================================== */}
 
-      <section className="py-9 sm:py-12 lg:py-14">
+      <section className="border-t border-slate-400/10 bg-white/[0.01] py-9 sm:py-12 lg:py-14">
         <div className="site-container">
           <div className="grid gap-7 sm:gap-8 xl:grid-cols-[.72fr_1.28fr] xl:gap-14">
             <div>
@@ -652,7 +1058,6 @@ export default async function ProjectDetailPage({
 
               <h2 className="section-title">
                 Built Around{" "}
-
                 <span className="gradient-text">
                   Analytical Decision-Making.
                 </span>
@@ -703,7 +1108,6 @@ export default async function ProjectDetailPage({
 
             <h2 className="section-title">
               From Raw Data to{" "}
-
               <span className="gradient-text">
                 Reporting Experience.
               </span>
@@ -762,7 +1166,6 @@ export default async function ProjectDetailPage({
 
               <h2 className="section-title">
                 Inside the{" "}
-
                 <span className="gradient-text">
                   Analysis.
                 </span>
@@ -812,7 +1215,7 @@ export default async function ProjectDetailPage({
                     {screenshot.title}
                   </h3>
 
-                  <p className="mt-2 text-[10px] leading-5 text-slate-400 sm:mt-3 sm:leading-6 sm:text-slate-500">
+                  <p className="mt-2 text-[10px] leading-5 text-slate-400 sm:mt-3 sm:text-[10px] sm:leading-6 sm:text-slate-500">
                     {screenshot.description}
                   </p>
                 </div>
@@ -836,14 +1239,14 @@ export default async function ProjectDetailPage({
 
               <h2 className="section-title">
                 What the Project{" "}
-
                 <span className="gradient-text">
                   Demonstrates.
                 </span>
               </h2>
 
               <p className="section-description">
-                The case study combines technical BI development with
+                The case study combines technical data preparation,
+                customer analytics, BI development and
                 business-oriented reporting design.
               </p>
             </div>
@@ -953,7 +1356,6 @@ export default async function ProjectDetailPage({
 
                 <h2 className="mt-4 text-[clamp(1.9rem,9vw,3.5rem)] font-bold leading-[1] tracking-[-0.05em] text-white sm:text-[clamp(2rem,4vw,3.5rem)]">
                   See More of My{" "}
-
                   <span className="gradient-text">
                     Analytics Work.
                   </span>

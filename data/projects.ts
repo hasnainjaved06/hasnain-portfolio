@@ -31,6 +31,7 @@ export const projects: PortfolioProject[] = [
     ],
     featured: true,
   },
+
   {
     number: "02",
     slug: "pakistan-atm-performance",
@@ -52,24 +53,25 @@ export const projects: PortfolioProject[] = [
     ],
     featured: true,
   },
+
   {
     number: "03",
     slug: "customer-growth-analytics",
     title: "Customer Growth Analytics",
-    category: "Customer Analytics",
+    category: "Customer & Retention Analytics",
     description:
-      "A customer intelligence and retention analytics solution designed to connect revenue performance, purchasing behavior, customer value, segmentation and churn risk through a unified Power BI reporting experience.",
+      "An end-to-end customer analytics solution built across 569K+ operational records using Python, SQL Server and Power BI to analyze customer value, purchasing behavior, RFM segmentation, lifetime value, retention and churn risk.",
     tools: [
       "Power BI",
+      "Python",
+      "SQL Server",
       "DAX",
-      "Data Modeling",
-      "Customer Analytics",
     ],
     highlights: [
-      "Executive Overview",
+      "569K+ Source Records",
+      "93K+ Customer Profiles",
       "RFM & CLV Segmentation",
-      "Cohort Retention",
-      "Churn Risk Analysis",
+      "Retention & Churn Risk",
     ],
     featured: true,
   },
