@@ -19,7 +19,7 @@ import { projects } from "@/data/projects";
 export const metadata: Metadata = {
   title: "Projects | Hasnain Javed",
   description:
-    "Explore Hasnain Javed's business intelligence and data analytics portfolio featuring Power BI, SQL Server, DAX, financial analytics, banking analytics and decision-focused dashboard projects.",
+    "Explore Hasnain Javed's business intelligence and data analytics portfolio featuring Power BI, SQL Server, DAX, financial analytics, banking analytics, customer analytics, retention analysis and decision-focused dashboard projects.",
 };
 
 const capabilities = [
@@ -155,12 +155,12 @@ export default function ProjectsPage() {
                   </p>
 
                   <p className="mt-1 text-[11px] font-semibold text-white sm:text-sm">
-                    Real dashboards. Complete case studies.
+                    Premium dashboards. Complete case studies.
                   </p>
 
                   <p className="mt-1 text-[8px] leading-4 text-slate-500 sm:text-[9px]">
-                    Published projects include real Power BI screenshots
-                    and documented analytical thinking.
+                    Published projects include premium dashboard
+                    showcases and documented analytical thinking.
                   </p>
                 </div>
               </article>
@@ -246,7 +246,7 @@ export default function ProjectsPage() {
                 </p>
 
                 <p className="mt-1 text-[10px] font-semibold text-white">
-                  2 Complete BI Case Studies
+                  {featuredProjects.length} Complete BI Case Studies
                 </p>
               </div>
             </div>
@@ -256,13 +256,14 @@ export default function ProjectsPage() {
 
           <div className="mt-8 space-y-7">
             {featuredProjects.map((project, index) => {
-              const isFinance =
+              const media =
                 project.slug ===
-                "corporate-finance-fpa-command-center";
-
-              const media = isFinance
-                ? portfolioMedia.finance
-                : portfolioMedia.atm;
+                "corporate-finance-fpa-command-center"
+                  ? portfolioMedia.finance
+                  : project.slug ===
+                      "pakistan-atm-performance"
+                    ? portfolioMedia.atm
+                    : portfolioMedia.customerGrowth;
 
               const copyColumnClass =
                 index % 2 === 0
@@ -280,7 +281,7 @@ export default function ProjectsPage() {
                   className="group relative overflow-hidden rounded-[26px] border border-slate-400/10 bg-[linear-gradient(135deg,rgba(12,27,46,.96),rgba(5,14,26,.99))] shadow-[0_28px_90px_rgba(0,0,0,.22)] transition duration-300 hover:border-blue-400/25 sm:rounded-[30px]"
                 >
                   <span className="pointer-events-none absolute -right-5 -top-14 font-mono text-[10rem] font-black leading-none tracking-[-0.08em] text-white/[0.018] sm:text-[14rem]">
-                    0{index + 1}
+                    {project.number}
                   </span>
 
                   <div
@@ -290,11 +291,7 @@ export default function ProjectsPage() {
                         : "xl:grid-cols-[.84fr_1.16fr]"
                     }`}
                   >
-                    {/* =================================================
-                        PROJECT INTRO
-                        Mobile: first
-                        Desktop: same copy column as before
-                    ================================================= */}
+                    {/* PROJECT INTRO */}
 
                     <div
                       className={`order-1 px-5 pb-4 pt-6 sm:px-8 sm:pb-5 sm:pt-8 lg:px-9 ${copyColumnClass} xl:row-start-1 xl:self-end xl:px-9 xl:pb-3 xl:pt-9`}
@@ -323,11 +320,7 @@ export default function ProjectsPage() {
                       </p>
                     </div>
 
-                    {/* =================================================
-                        DASHBOARD MEDIA
-                        Mobile: second
-                        Desktop: original media column
-                    ================================================= */}
+                    {/* DASHBOARD MEDIA */}
 
                     <div
                       className={`order-2 border-slate-400/10 px-4 py-4 sm:p-6 ${mediaColumnClass} xl:row-span-2 xl:row-start-1 xl:p-6`}
@@ -347,7 +340,7 @@ export default function ProjectsPage() {
                             />
 
                             <span className="font-mono text-[6px] uppercase tracking-[0.12em] text-slate-600 sm:text-[7px] sm:tracking-[0.14em]">
-                              Power BI • Project 0{index + 1}
+                              Power BI • Project {project.number}
                             </span>
                           </div>
                         </div>
@@ -356,7 +349,7 @@ export default function ProjectsPage() {
                           <PortfolioImage
                             src={media.hero}
                             alt={`${project.title} dashboard overview`}
-                            label={`Case Study 0${index + 1}`}
+                            label={`Case Study ${project.number}`}
                             aspectClass="aspect-[16/9]"
                             priority={index === 0}
                           />
@@ -413,17 +406,11 @@ export default function ProjectsPage() {
                       </div>
                     </div>
 
-                    {/* =================================================
-                        PROJECT DETAILS
-                        Mobile: third
-                        Desktop: directly beneath intro copy
-                    ================================================= */}
+                    {/* PROJECT DETAILS */}
 
                     <div
                       className={`order-3 px-5 pb-6 pt-4 sm:px-8 sm:pb-8 sm:pt-5 lg:px-9 ${copyColumnClass} xl:row-start-2 xl:self-start xl:px-9 xl:pb-9 xl:pt-3`}
                     >
-                      {/* TECHNOLOGY */}
-
                       <div className="flex flex-wrap gap-2">
                         {project.tools.map((tool) => (
                           <span
@@ -434,8 +421,6 @@ export default function ProjectsPage() {
                           </span>
                         ))}
                       </div>
-
-                      {/* HIGHLIGHTS */}
 
                       <div className="mt-5 sm:mt-6">
                         <p className="font-mono text-[7px] uppercase tracking-[0.16em] text-slate-600">

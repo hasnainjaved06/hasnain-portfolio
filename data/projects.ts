@@ -52,4 +52,25 @@ export const projects: PortfolioProject[] = [
     ],
     featured: true,
   },
+  {
+    number: "03",
+    slug: "customer-growth-analytics",
+    title: "Customer Growth Analytics",
+    category: "Customer Analytics",
+    description:
+      "A customer intelligence and retention analytics solution designed to connect revenue performance, purchasing behavior, customer value, segmentation and churn risk through a unified Power BI reporting experience.",
+    tools: [
+      "Power BI",
+      "DAX",
+      "Data Modeling",
+      "Customer Analytics",
+    ],
+    highlights: [
+      "Executive Overview",
+      "RFM & CLV Segmentation",
+      "Cohort Retention",
+      "Churn Risk Analysis",
+    ],
+    featured: true,
+  },
 ];

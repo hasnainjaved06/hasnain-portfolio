@@ -17,6 +17,7 @@ type PortfolioMedia = {
   };
   finance: ProjectMedia;
   atm: ProjectMedia;
+  customerGrowth: ProjectMedia;
 };
 
 export const portfolioMedia: PortfolioMedia = {
@@ -81,6 +82,37 @@ export const portfolioMedia: PortfolioMedia = {
         label: "Regional Performance",
       },
     ],
+    embedUrl: null,
+  },
+
+  customerGrowth: {
+    hero:
+      "/portfolio/projects/customer-growth-analytics/customer-growth-hero.png",
+
+    screenshots: [
+      {
+        src:
+          "/portfolio/projects/customer-growth-analytics/customer-growth-01.png",
+        alt:
+          "Customer Growth Analytics Executive Overview premium dashboard showcase",
+        label: "Executive Overview",
+      },
+      {
+        src:
+          "/portfolio/projects/customer-growth-analytics/customer-growth-02.png",
+        alt:
+          "Customer Growth Analytics Customer Intelligence premium dashboard showcase",
+        label: "Customer Intelligence",
+      },
+      {
+        src:
+          "/portfolio/projects/customer-growth-analytics/customer-growth-03.png",
+        alt:
+          "Customer Growth Analytics Retention and Risk premium dashboard showcase",
+        label: "Retention & Risk",
+      },
+    ],
+
     embedUrl: null,
   },
 };

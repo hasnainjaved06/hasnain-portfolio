@@ -298,6 +298,123 @@ const projects: Record<string, Project> = {
       },
     ],
   },
+
+  "customer-growth-analytics": {
+    slug: "customer-growth-analytics",
+    number: "03",
+    title: "Customer Growth Analytics",
+    shortTitle: "Customer Growth",
+    category: "Customer Analytics • Power BI • DAX",
+    description:
+      "A multi-page customer analytics solution designed to connect revenue performance, purchasing behavior, customer value, segmentation, retention and churn risk through one structured business intelligence experience.",
+    overview:
+      "The project brings together customer, order and revenue behavior with RFM segmentation, customer lifetime value, cohort retention and risk analysis. The reporting experience is structured across executive performance, customer intelligence and retention-focused views so decision-makers can move from high-level growth indicators into customer-level analytical detail.",
+    heroImage:
+      "/portfolio/projects/customer-growth-analytics/customer-growth-hero.png",
+    screenshots: [
+      {
+        src:
+          "/portfolio/projects/customer-growth-analytics/customer-growth-01.png",
+        title: "Executive Overview",
+        description:
+          "Executive-level view combining revenue, orders, customer activity, average order value, purchasing behavior and customer growth indicators.",
+      },
+      {
+        src:
+          "/portfolio/projects/customer-growth-analytics/customer-growth-02.png",
+        title: "Customer Intelligence",
+        description:
+          "Customer segmentation view combining RFM segments, CLV tiers, customer value distribution and geographic revenue analysis.",
+      },
+      {
+        src:
+          "/portfolio/projects/customer-growth-analytics/customer-growth-03.png",
+        title: "Retention & Risk",
+        description:
+          "Retention-focused analysis covering cohort behavior, churn probability, revenue at risk, retention priority and high-risk customer monitoring.",
+      },
+    ],
+    tools: [
+      "Power BI",
+      "DAX",
+      "Power Query",
+      "Python",
+      "SQL",
+      "Data Modeling",
+      "RFM Analysis",
+      "CLV Analytics",
+    ],
+    capabilities: [
+      "Executive Customer KPIs",
+      "Revenue & Order Analysis",
+      "RFM Segmentation",
+      "Customer Lifetime Value",
+      "Customer Value Tiers",
+      "Cohort Retention",
+      "Churn Risk Analysis",
+      "Revenue-at-Risk Reporting",
+    ],
+    objectives: [
+      "Create one analytical view connecting customer growth, purchasing behavior and revenue performance.",
+      "Segment customers using RFM and lifetime-value perspectives to make customer groups easier to interpret.",
+      "Track retention behavior over time and identify customers or revenue exposed to higher risk.",
+      "Provide an executive-to-detail reporting flow across growth, customer intelligence and retention analysis.",
+    ],
+    process: [
+      {
+        number: "01",
+        title: "Data Preparation",
+        description:
+          "Prepared and transformed customer, order and transaction-level data into structured analytical datasets for downstream reporting.",
+      },
+      {
+        number: "02",
+        title: "Customer Modeling",
+        description:
+          "Structured customer-level analytical fields and relationships required for reusable segmentation, value and retention analysis.",
+      },
+      {
+        number: "03",
+        title: "Analytical Features",
+        description:
+          "Developed customer intelligence concepts including RFM segments, CLV tiers, retention measures and risk-oriented classifications.",
+      },
+      {
+        number: "04",
+        title: "DAX & KPI Layer",
+        description:
+          "Built reusable measures for revenue, customers, orders, repeat behavior, retention, customer value and risk reporting.",
+      },
+      {
+        number: "05",
+        title: "Dashboard Experience",
+        description:
+          "Designed three connected Power BI views covering executive performance, customer intelligence and retention and risk analysis.",
+      },
+    ],
+    highlights: [
+      {
+        title: "Customer Intelligence",
+        description:
+          "Combines behavioral segmentation, customer value and revenue analysis to create a clearer view of the customer base.",
+      },
+      {
+        title: "RFM & CLV",
+        description:
+          "Uses RFM segments and customer lifetime-value tiers to organize customers by behavior and commercial value.",
+      },
+      {
+        title: "Retention Analysis",
+        description:
+          "Cohort-based retention views make changes in customer activity easier to track across customer groups and periods.",
+      },
+      {
+        title: "Risk Visibility",
+        description:
+          "Churn-risk and revenue-at-risk reporting helps surface customer segments that require closer attention.",
+      },
+    ],
+  },
 };
 
 export function generateStaticParams() {
@@ -652,7 +769,8 @@ export default async function ProjectDetailPage({
               </h2>
 
               <p className="section-description">
-                Real dashboard screenshots from the completed project.
+                Premium portfolio showcases of the completed Power BI
+                reporting experience.
               </p>
             </div>
 
