@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -45,6 +45,25 @@ type PipelineStep = {
   description: string;
 };
 
+type SpotlightStat = {
+  value: string;
+  label: string;
+  detail: string;
+};
+
+type SpotlightItem = {
+  title: string;
+  description: string;
+};
+
+type ProjectSpotlight = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  stats: SpotlightStat[];
+  items: SpotlightItem[];
+};
+
 type Project = {
   slug: string;
   number: string;
@@ -79,6 +98,8 @@ type Project = {
   scaleStats?: ScaleStat[];
   datasetFootprint?: DatasetItem[];
   pipeline?: PipelineStep[];
+  spotlight?: ProjectSpotlight;
+  embedUrl?: string;
 };
 
 const projects: Record<string, Project> = {
@@ -97,6 +118,74 @@ const projects: Record<string, Project> = {
 
     heroImage:
       "/portfolio/projects/corporate-finance-fpa/finance-01.png",
+
+    embedUrl:
+      "https://app.fabric.microsoft.com/view?r=eyJrIjoiZDRkOTdmMzQtZDdhYi00YjEyLTllODEtOTU1OWExNmNmZjgwIiwidCI6ImMxMzdiNGU2LTUyM2UtNGE5Ny04ZjRmLWU5YWE0MmRkMDU1YiJ9&pageName=b31cfce3a97e920e50a7",
+
+    spotlight: {
+      eyebrow: "FP&A Architecture & Planning Scope",
+      title: "A Finance Model Built Beyond the Dashboard.",
+      description:
+        "This case study is differentiated by the depth of the finance reporting layer: SQL Server structures the analytical foundation, a reusable DAX measure layer supports management reporting, and the final Power BI experience connects historical performance with forward-looking planning.",
+      stats: [
+        {
+          value: "97+",
+          label: "DAX Measures",
+          detail:
+            "Reusable measures covering performance, statements, working capital and forecasting.",
+        },
+        {
+          value: "5",
+          label: "Report Pages",
+          detail:
+            "Executive, statement, working-capital and scenario-focused reporting.",
+        },
+        {
+          value: "3",
+          label: "Scenario Views",
+          detail:
+            "Base, optimistic and pessimistic planning perspectives.",
+        },
+        {
+          value: "2024–26",
+          label: "Planning Calendar",
+          detail:
+            "Dedicated date model supporting historical and forward-looking analysis.",
+        },
+      ],
+      items: [
+        {
+          title: "Executive Performance",
+          description:
+            "Management-level KPIs bring revenue, profitability, variance and overall financial performance into one decision view.",
+        },
+        {
+          title: "Financial Statements",
+          description:
+            "Structured P&L, balance-sheet and cash-flow reporting connects headline KPIs with statement-level detail.",
+        },
+        {
+          title: "Working Capital",
+          description:
+            "Operational finance analysis focuses on receivables, payables, inventory efficiency and cash-conversion performance.",
+        },
+        {
+          title: "Budget & Forecast",
+          description:
+            "Actuals, budget and forecast measures support period comparison, variance analysis and planning review.",
+        },
+        {
+          title: "Scenario Planning",
+          description:
+            "Base, optimistic and pessimistic forecasts extend the model into forward-looking FP&A decision support.",
+        },
+        {
+          title: "SQL-to-Power BI Architecture",
+          description:
+            "FinancePortfolioDB, calendar modeling, fact structures and the DAX layer create a reusable reporting foundation instead of isolated visuals.",
+        },
+      ],
+    },
 
     screenshots: [
       {
@@ -239,6 +328,74 @@ const projects: Record<string, Project> = {
     heroImage:
       "/portfolio/projects/pakistan-atm/atm-01.png",
 
+    embedUrl:
+      "https://app.fabric.microsoft.com/view?r=eyJrIjoiMTk4YmU5YTQtMGFhYS00Mzc1LTk1MTYtMzVhODY5ODY3OWZiIiwidCI6ImMxMzdiNGU2LTUyM2UtNGE5Ny04ZjRmLWU5YWE0MmRkMDU1YiJ9&pageName=a507002169278fee2685",
+
+    spotlight: {
+      eyebrow: "ATM Segmentation & Performance Framework",
+      title: "Turning Raw ATM Metrics Into Comparable Performance Bands.",
+      description:
+        "The defining requirement of this project was not simply plotting ATM totals. Raw transaction and revenue values were converted into structured analytical ranges so operational performance could be compared consistently across ATMs, regions and performance groups.",
+      stats: [
+        {
+          value: "3",
+          label: "Dashboard Views",
+          detail:
+            "Overview, performance segmentation and operational analysis.",
+        },
+        {
+          value: "3",
+          label: "Segmentation Layers",
+          detail:
+            "Percentage ranges, transaction ranges and revenue-performance groups.",
+        },
+        {
+          value: "ATM",
+          label: "Analysis Grain",
+          detail:
+            "Performance is evaluated at ATM level before regional and grouped comparison.",
+        },
+        {
+          value: "BI",
+          label: "Decision Focus",
+          detail:
+            "Compact KPI reporting designed for fast operational interpretation.",
+        },
+      ],
+      items: [
+        {
+          title: "Percentage Bucketing",
+          description:
+            "Continuous performance values are translated into defined percentage bands, making relative ATM behavior easier to interpret.",
+        },
+        {
+          title: "Transaction Ranges",
+          description:
+            "Transaction activity is grouped into meaningful ranges so high-, mid- and lower-activity ATMs can be compared consistently.",
+        },
+        {
+          title: "Revenue Performance",
+          description:
+            "Revenue is classified into performance categories instead of relying only on raw totals, helping stronger and weaker groups stand out.",
+        },
+        {
+          title: "Regional Comparison",
+          description:
+            "ATM-level metrics roll into regional views so geographic differences and operational concentration are easier to identify.",
+        },
+        {
+          title: "Interactive Filtering",
+          description:
+            "Power BI slicers and DAX-driven visuals allow the report to move quickly between overall performance and targeted operational segments.",
+        },
+        {
+          title: "Executive Usability",
+          description:
+            "The report prioritizes compact visual hierarchy, consistent categories and decision-focused comparisons over unnecessary visual complexity.",
+        },
+      ],
+    },
+
     screenshots: [
       {
         src: "/portfolio/projects/pakistan-atm/atm-01.png",
@@ -360,6 +517,9 @@ const projects: Record<string, Project> = {
 
     heroImage:
       "/portfolio/projects/customer-growth-analytics/customer-growth-hero.png",
+
+    embedUrl:
+      "https://app.fabric.microsoft.com/view?r=eyJrIjoiOWQxNTVlNDUtOWM4NS00NmM0LTlhNDYtY2NlOTkyOWQzYzI1IiwidCI6ImMxMzdiNGU2LTUyM2UtNGE5Ny04ZjRmLWU5YWE0MmRkMDU1YiJ9&pageName=07792dd1e832288081ab",
 
     screenshots: [
       {
@@ -725,10 +885,16 @@ export default async function ProjectDetailPage({
 
               <div className="mt-6 grid grid-cols-2 gap-2.5 sm:mt-7 sm:flex sm:flex-wrap sm:gap-3">
                 <a
-                  href="#dashboard-gallery"
+                  href={
+                    project.embedUrl
+                      ? "#interactive-dashboard"
+                      : "#dashboard-gallery"
+                  }
                   className="btn-primary w-full px-2.5 text-center text-[0.7rem] sm:w-auto sm:px-5 sm:text-[0.92rem]"
                 >
-                  Explore Dashboard
+                  {project.embedUrl
+                    ? "Try Interactive Dashboard"
+                    : "Explore Dashboard"}
                   <ArrowRight
                     size={14}
                     className="shrink-0"
@@ -845,6 +1011,81 @@ export default async function ProjectDetailPage({
           </div>
         </div>
       </section>
+
+      {/* =====================================================
+          PROJECT-SPECIFIC DEEP DIVE — PROJECTS 01 & 02
+      ===================================================== */}
+
+      {project.spotlight && (
+        <section className="py-9 sm:py-12 lg:py-14">
+          <div className="site-container">
+            <div className="max-w-[840px]">
+              <div className="eyebrow">
+                {project.spotlight.eyebrow}
+              </div>
+
+              <h2 className="section-title">
+                {project.spotlight.title}
+              </h2>
+
+              <p className="section-description">
+                {project.spotlight.description}
+              </p>
+            </div>
+
+            <div className="mt-7 grid grid-cols-2 gap-2.5 sm:mt-8 sm:gap-3 lg:grid-cols-4">
+              {project.spotlight.stats.map((stat) => (
+                <article
+                  key={stat.label}
+                  className="relative overflow-hidden rounded-[18px] border border-blue-400/10 bg-[linear-gradient(145deg,rgba(12,27,46,.9),rgba(5,14,26,.98))] p-4 sm:rounded-[22px] sm:p-5"
+                >
+                  <div className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-blue-500/[0.07] blur-2xl" />
+
+                  <strong className="relative block text-[1.35rem] font-bold tracking-[-0.04em] text-sky-400 sm:text-2xl">
+                    {stat.value}
+                  </strong>
+
+                  <p className="relative mt-2 text-[8px] font-semibold uppercase tracking-[0.11em] text-slate-300 sm:text-[9px]">
+                    {stat.label}
+                  </p>
+
+                  <p className="relative mt-2 text-[7px] leading-4 text-slate-500 sm:text-[8px]">
+                    {stat.detail}
+                  </p>
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-7 grid gap-2.5 sm:grid-cols-2 sm:gap-3 lg:grid-cols-3">
+              {project.spotlight.items.map((item, index) => (
+                <article
+                  key={item.title}
+                  className="glass-card p-4 sm:p-5"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-[8px] font-bold text-cyan-400">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                    <CheckCircle2
+                      size={15}
+                      className="text-slate-500"
+                    />
+                  </div>
+
+                  <h3 className="mt-4 text-[0.8rem] font-semibold text-white sm:text-sm">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-2 text-[9px] leading-5 text-slate-500">
+                    {item.description}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* =====================================================
           PROJECT SCALE — PROJECT 03
@@ -1148,6 +1389,102 @@ export default async function ProjectDetailPage({
           </div>
         </div>
       </section>
+
+      {/* =====================================================
+          LIVE INTERACTIVE DASHBOARD
+      ===================================================== */}
+
+      {project.embedUrl && (
+        <section
+          id="interactive-dashboard"
+          className="scroll-mt-24 border-y border-slate-400/10 bg-white/[0.01] py-9 sm:py-12 lg:py-14"
+        >
+          <div className="site-container">
+            <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+              <div className="max-w-[780px]">
+                <div className="flex items-center gap-3">
+                  <div className="eyebrow">
+                    Interactive Power BI Experience
+                  </div>
+
+                  <span className="inline-flex items-center gap-2 rounded-full border border-green-400/15 bg-green-400/[0.04] px-3 py-1.5 text-[7px] font-semibold uppercase tracking-[0.1em] text-green-300">
+                    <span className="h-1.5 w-1.5 rounded-full bg-green-300 shadow-[0_0_8px_rgba(134,239,172,.75)]" />
+                    Live
+                  </span>
+                </div>
+
+                <h2 className="section-title">
+                  Use the{" "}
+                  <span className="gradient-text">
+                    Dashboard Yourself.
+                  </span>
+                </h2>
+
+                <p className="section-description">
+                  This is the live published Power BI report. Use the
+                  report navigation, slicers, filters, tooltips and
+                  interactive visuals to explore the analytical
+                  experience directly.
+                </p>
+              </div>
+
+              <a
+                href={project.embedUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-secondary w-full sm:w-auto"
+              >
+                Open Full Dashboard
+                <ArrowRight size={15} />
+              </a>
+            </div>
+
+            <div className="mt-7 overflow-hidden rounded-[20px] border border-blue-400/15 bg-[#030a12] p-2 shadow-[0_28px_90px_rgba(0,0,0,.35)] sm:mt-8 sm:rounded-[28px] sm:p-3">
+              <div className="flex h-9 items-center justify-between border-b border-white/[0.06] bg-[#071321] px-3 sm:h-10 sm:px-4">
+                <div className="flex items-center gap-1.5">
+                  <span className="h-2 w-2 rounded-full bg-red-400/70" />
+                  <span className="h-2 w-2 rounded-full bg-amber-300/70" />
+                  <span className="h-2 w-2 rounded-full bg-green-400/70" />
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <BarChart3
+                    size={12}
+                    className="text-cyan-400"
+                  />
+
+                  <span className="font-mono text-[6px] uppercase tracking-[0.12em] text-slate-600 sm:text-[7px] sm:tracking-[0.14em]">
+                    Live Fabric Report • Case Study {project.number}
+                  </span>
+                </div>
+              </div>
+
+              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-b-[14px] bg-[#050d18] sm:rounded-b-[20px]">
+                <iframe
+                  title={`${project.title} interactive Power BI dashboard`}
+                  src={project.embedUrl}
+                  className="absolute inset-0 h-full w-full border-0"
+                  allowFullScreen
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div className="mt-3 flex items-start gap-3 rounded-xl border border-cyan-400/10 bg-cyan-400/[0.025] px-4 py-3 sm:rounded-2xl">
+              <Sparkles
+                size={14}
+                className="mt-0.5 shrink-0 text-cyan-400"
+              />
+
+              <p className="text-[8px] leading-5 text-slate-400 sm:text-[9px]">
+                Best viewed on desktop for the full report experience.
+                On smaller screens, use the full-dashboard button above
+                whenever you want more space for report interaction.
+              </p>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* =====================================================
           DASHBOARD GALLERY
