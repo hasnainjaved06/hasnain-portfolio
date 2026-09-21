@@ -1080,9 +1080,26 @@ export default async function ProjectDetailPage({
                 </span>
               </div>
 
-              <h1 className="mt-4 text-[clamp(2.25rem,10.5vw,3.4rem)] font-bold leading-[0.98] tracking-[-0.05em] text-white sm:mt-5 sm:text-[clamp(2.8rem,5.2vw,5.2rem)] sm:leading-[0.95] sm:tracking-[-0.055em]">
-                {project.title}
-              </h1>
+              {project.slug ===
+              "enterprise-sales-inventory-intelligence" ? (
+                <h1 className="mt-4 max-w-[650px] font-bold leading-[0.96] tracking-[-0.05em] text-white sm:mt-5">
+                  <span className="block text-[clamp(2.2rem,7vw,3.65rem)]">
+                    Enterprise Sales &
+                  </span>
+
+                  <span className="block text-[clamp(2.2rem,7vw,3.65rem)]">
+                    Inventory Intelligence
+                  </span>
+
+                  <span className="block text-[clamp(2.2rem,7vw,3.65rem)]">
+                    Platform
+                  </span>
+                </h1>
+              ) : (
+                <h1 className="mt-4 text-[clamp(2.25rem,10.5vw,3.4rem)] font-bold leading-[0.98] tracking-[-0.05em] text-white sm:mt-5 sm:text-[clamp(2.8rem,5.2vw,5.2rem)] sm:leading-[0.95] sm:tracking-[-0.055em]">
+                  {project.title}
+                </h1>
+              )}
 
               <p className="mt-5 max-w-[720px] text-[0.88rem] leading-7 text-slate-400 sm:mt-6 sm:text-[0.98rem] sm:leading-8">
                 {project.description}
@@ -2097,6 +2114,7 @@ export default async function ProjectDetailPage({
     </main>
   );
 }
+
 
 
 
