@@ -1,115 +1,81 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 
 import {
   ArrowRight,
   BarChart3,
-  Bot,
-  Braces,
   Code2,
   Database,
-  FileSpreadsheet,
-  GitBranch,
+  Layers3,
   Settings2,
-  Workflow,
 } from "lucide-react";
 
 const capabilityGroups = [
   {
-    eyebrow: "BI & Visualization",
+    eyebrow: "BI & Semantic Reporting",
     title: "Business Intelligence",
     description:
-      "Building executive dashboards, KPI frameworks and decision-focused reporting experiences.",
+      "Building executive dashboards, KPI frameworks, reusable DAX measures and decision-focused reporting experiences.",
     icon: BarChart3,
-    tools: ["Power BI", "DAX", "Power Query", "Looker Studio"],
+    tools: ["Power BI", "DAX", "Power Query", "Semantic Models"],
+  },
+  {
+    eyebrow: "Modern Data Platform",
+    title: "Microsoft Fabric & Data Engineering",
+    description:
+      "Building governed analytical pipelines across Data Factory, OneLake, Lakehouse, PySpark, Delta and warehouse layers.",
+    icon: Layers3,
+    tools: ["Microsoft Fabric", "Data Factory", "PySpark", "Lakehouse"],
   },
   {
     eyebrow: "Data & Programming",
     title: "Analytics & Querying",
     description:
-      "Using SQL, Python and spreadsheet analysis to turn business data into measurable insight.",
+      "Using SQL and Python for data preparation, validation, feature engineering and customer-focused analytical workflows.",
     icon: Code2,
-    tools: ["SQL", "Python", "Excel", "Pandas"],
-  },
-  {
-    eyebrow: "Data Infrastructure",
-    title: "Modeling & Transformation",
-    description:
-      "Structuring reliable analytical models and reusable transformation workflows for reporting.",
-    icon: Database,
-    tools: ["SQL Server", "PostgreSQL", "dbt", "Data Modeling"],
+    tools: ["SQL", "Python", "pandas", "RFM / CLV"],
   },
   {
     eyebrow: "Automation & Business",
     title: "Process & Reporting Automation",
     description:
-      "Reducing manual reporting work while connecting business processes with measurable performance.",
+      "Connecting business processes, KPI frameworks and automated reporting workflows to measurable performance.",
     icon: Settings2,
-    tools: [
-      "Google Apps Script",
-      "Power Automate",
-      "Process Mapping",
-      "Jira",
-    ],
+    tools: ["Apps Script", "Power Automate", "Process Mapping", "Jira"],
   },
 ];
 
 const coreStack = [
-  {
-    name: "Power BI",
-    icon: BarChart3,
-  },
-  {
-    name: "SQL",
-    icon: Database,
-  },
-  {
-    name: "DAX",
-    icon: Braces,
-  },
-  {
-    name: "Python",
-    icon: Code2,
-  },
-  {
-    name: "Excel",
-    icon: FileSpreadsheet,
-  },
-  {
-    name: "Automation",
-    icon: Bot,
-  },
-  {
-    name: "Data Modeling",
-    icon: Workflow,
-  },
-  {
-    name: "Process Analysis",
-    icon: GitBranch,
-  },
+  { name: "Power BI", icon: BarChart3 },
+  { name: "Microsoft Fabric", icon: Layers3 },
+  { name: "SQL", icon: Database },
+  { name: "Python", icon: Code2 },
+  { name: "PySpark", icon: Layers3 },
+  { name: "DAX", icon: BarChart3 },
+  { name: "Power Query", icon: Settings2 },
+  { name: "Data Modeling", icon: Database },
 ];
 
 export default function SkillsPreview() {
   return (
     <section className="section border-y border-slate-400/10 bg-white/[0.01]">
       <div className="site-container">
-        {/* HEADER */}
-
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-          <div className="max-w-[760px]">
-            <div className="eyebrow">Analytics Stack</div>
+          <div className="max-w-[780px]">
+            <div className="eyebrow">Analytics & Data Stack</div>
 
             <h2 className="section-title">
               Tools are important.
               <br />
               <span className="gradient-text">
-                How they solve problems matters more.
+                Complete analytical delivery matters more.
               </span>
             </h2>
 
-            <p className="section-description max-w-[720px]">
-              My analytics toolkit combines business intelligence,
-              querying, data modeling, automation and process analysis
-              to support better business decisions.
+            <p className="section-description max-w-[740px]">
+              My toolkit now spans business intelligence, SQL, Python,
+              Microsoft Fabric data engineering, automation and business
+              analysis — demonstrated across four completed portfolio case
+              studies.
             </p>
           </div>
 
@@ -119,31 +85,24 @@ export default function SkillsPreview() {
           </Link>
         </div>
 
-        {/* CORE STACK STRIP */}
-
         <div className="mt-10 flex flex-wrap gap-2">
           {coreStack.map((item) => {
             const Icon = item.icon;
-
             return (
               <div
                 key={item.name}
                 className="flex items-center gap-2 rounded-full border border-slate-400/10 bg-white/[0.02] px-4 py-2.5 text-[10px] font-medium text-slate-400"
               >
                 <Icon size={13} className="text-sky-400" />
-
                 {item.name}
               </div>
             );
           })}
         </div>
 
-        {/* CAPABILITY GRID */}
-
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           {capabilityGroups.map((group) => {
             const Icon = group.icon;
-
             return (
               <article
                 key={group.title}
@@ -154,13 +113,12 @@ export default function SkillsPreview() {
                     <span className="font-mono text-[9px] font-semibold uppercase tracking-[0.16em] text-cyan-400">
                       {group.eyebrow}
                     </span>
-
                     <h3 className="mt-3 text-xl font-semibold tracking-tight text-white">
                       {group.title}
                     </h3>
                   </div>
 
-                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-blue-400/15 bg-blue-500/[0.07] text-sky-400 transition duration-300 group-hover:border-cyan-400/30 group-hover:text-cyan-300">
+                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-blue-400/15 bg-blue-500/[0.07] text-sky-400">
                     <Icon size={20} />
                   </div>
                 </div>
@@ -179,8 +137,6 @@ export default function SkillsPreview() {
                     </span>
                   ))}
                 </div>
-
-                <div className="absolute bottom-0 left-0 h-px w-0 bg-gradient-to-r from-blue-500 to-cyan-400 transition-all duration-300 group-hover:w-full" />
               </article>
             );
           })}

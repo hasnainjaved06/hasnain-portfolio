@@ -1,10 +1,11 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 
 import {
   ArrowRight,
   BarChart3,
   BriefcaseBusiness,
   Database,
+  Layers3,
   Sparkles,
 } from "lucide-react";
 
@@ -16,11 +17,11 @@ const stats = [
     label: "Years Experience",
   },
   {
-    value: "8+",
-    label: "Analytics Projects",
+    value: "04",
+    label: "Completed Case Studies",
   },
   {
-    value: "10+",
+    value: "14+",
     label: "Tools & Technologies",
   },
   {
@@ -31,11 +32,11 @@ const stats = [
 
 const skills = [
   "Power BI",
+  "Microsoft Fabric",
   "SQL",
-  "DAX",
   "Python",
-  "Reporting Automation",
-  "Process Analytics",
+  "PySpark",
+  "DAX",
 ];
 
 export default function Hero() {
@@ -43,7 +44,6 @@ export default function Hero() {
     <section className="relative overflow-hidden pb-12 pt-12 sm:pb-16 sm:pt-16 lg:pb-20 lg:pt-24">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-72 top-0 h-[720px] w-[720px] rounded-full bg-blue-600/[0.085] blur-3xl" />
-
         <div className="absolute -right-72 top-20 h-[650px] w-[650px] rounded-full bg-cyan-500/[0.055] blur-3xl" />
 
         <div
@@ -68,7 +68,7 @@ export default function Hero() {
               </span>
 
               <span className="font-mono text-[7px] font-semibold uppercase tracking-[0.14em] text-green-300 sm:text-[8px] sm:tracking-[0.16em]">
-                Open to Data & BI Opportunities
+                Open to Data, BI & Analytics Opportunities
               </span>
             </div>
 
@@ -83,11 +83,12 @@ export default function Hero() {
               Decisions.
             </h1>
 
-            <p className="mt-5 max-w-[700px] text-[0.88rem] leading-6 text-slate-400 sm:mt-6 sm:text-[0.98rem] sm:leading-7">
+            <p className="mt-5 max-w-[720px] text-[0.88rem] leading-6 text-slate-400 sm:mt-6 sm:text-[0.98rem] sm:leading-7">
               I&apos;m Hasnain Javed, a Data Analyst and Business
               Intelligence professional with 5+ years of experience
-              transforming complex data into clear reporting,
-              actionable insights and decision-ready dashboards.
+              building decision-ready reporting, analytical models,
+              automation workflows and modern Microsoft Fabric data
+              solutions.
             </p>
 
             <div className="mt-4 flex flex-wrap gap-2 sm:mt-5">
@@ -138,26 +139,22 @@ export default function Hero() {
 
             <div className="mt-5 grid grid-cols-1 gap-2.5 border-t border-slate-400/10 pt-4 min-[390px]:grid-cols-3 sm:mt-6 sm:flex sm:flex-wrap sm:items-center sm:gap-x-7 sm:gap-y-3 sm:pt-5">
               <div className="flex items-center gap-2 text-[7px] text-slate-500 sm:text-[8px]">
-                <BarChart3
-                  size={13}
-                  className="text-sky-400"
-                />
+                <BarChart3 size={13} className="text-sky-400" />
                 Business Intelligence
               </div>
 
               <div className="flex items-center gap-2 text-[7px] text-slate-500 sm:text-[8px]">
-                <Database
-                  size={13}
-                  className="text-cyan-400"
-                />
-                Data Analysis
+                <Database size={13} className="text-cyan-400" />
+                Data Analytics
               </div>
 
               <div className="flex items-center gap-2 text-[7px] text-slate-500 sm:text-[8px]">
-                <BriefcaseBusiness
-                  size={13}
-                  className="text-violet-400"
-                />
+                <Layers3 size={13} className="text-violet-400" />
+                Microsoft Fabric
+              </div>
+
+              <div className="flex items-center gap-2 text-[7px] text-slate-500 sm:text-[8px]">
+                <BriefcaseBusiness size={13} className="text-violet-400" />
                 Business Process Analytics
               </div>
             </div>
@@ -165,10 +162,7 @@ export default function Hero() {
 
           <div className="relative mx-auto mt-2 w-full max-w-[470px] sm:mt-4 xl:mx-0 xl:ml-auto xl:mt-0">
             <div className="mb-3 flex items-center justify-end gap-2 font-mono text-[7px] uppercase tracking-[0.16em] text-slate-600 sm:mb-4">
-              <Sparkles
-                size={12}
-                className="text-cyan-400"
-              />
+              <Sparkles size={12} className="text-cyan-400" />
               Analytics Professional
             </div>
 
