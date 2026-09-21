@@ -75,4 +75,28 @@ export const projects: PortfolioProject[] = [
     ],
     featured: true,
   },
+
+  {
+    number: "04",
+    slug: "enterprise-sales-inventory-intelligence",
+    title: "Enterprise Sales & Inventory Intelligence Platform",
+    category: "Microsoft Fabric • Data Engineering • Power BI",
+    description:
+      "A production-style Microsoft Fabric data engineering and analytics platform spanning SQL Server ingestion, Data Factory orchestration, OneLake Medallion Architecture, PySpark transformation, data-quality controls, incremental processing, Fabric Warehouse, Direct Lake semantic modeling and Power BI.",
+    tools: [
+      "Microsoft Fabric",
+      "Data Factory",
+      "PySpark",
+      "Fabric Warehouse",
+      "Direct Lake",
+      "Power BI",
+    ],
+    highlights: [
+      "Bronze • Silver • Gold Architecture",
+      "Data Quality & Reconciliation",
+      "Incremental Watermark Processing",
+      "Direct Lake + Platform Monitoring",
+    ],
+    featured: true,
+  },
 ];

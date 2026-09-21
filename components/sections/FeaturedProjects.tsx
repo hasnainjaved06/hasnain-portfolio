@@ -17,6 +17,20 @@ export default function FeaturedProjects() {
     (project) => project.featured
   );
 
+  const mediaBySlug = {
+    "corporate-finance-fpa-command-center":
+      portfolioMedia.finance,
+
+    "pakistan-atm-performance":
+      portfolioMedia.atm,
+
+    "customer-growth-analytics":
+      portfolioMedia.customerGrowth,
+
+    "enterprise-sales-inventory-intelligence":
+      portfolioMedia.fabricEnterpriseSales,
+  } as const;
+
   return (
     <section className="relative overflow-hidden border-y border-slate-400/10 bg-white/[0.01] py-12 sm:py-14 lg:py-16">
       {/* BACKGROUND */}
@@ -41,10 +55,11 @@ export default function FeaturedProjects() {
               </span>
             </h2>
 
-            <p className="section-description max-w-[700px]">
-              Completed Power BI case studies covering corporate
+            <p className="section-description max-w-[720px]">
+              Completed end-to-end case studies spanning corporate
               finance, banking performance, customer intelligence,
-              retention, forecasting and decision-focused analytics.
+              retention analytics and Microsoft Fabric data
+              engineering.
             </p>
           </div>
 
@@ -81,13 +96,13 @@ export default function FeaturedProjects() {
         <div className="mt-9 space-y-6">
           {featuredProjects.map((project, index) => {
             const media =
-              project.slug ===
-              "corporate-finance-fpa-command-center"
-                ? portfolioMedia.finance
-                : project.slug ===
-                    "pakistan-atm-performance"
-                  ? portfolioMedia.atm
-                  : portfolioMedia.customerGrowth;
+              mediaBySlug[
+                project.slug as keyof typeof mediaBySlug
+              ];
+
+            if (!media) {
+              return null;
+            }
 
             return (
               <article
@@ -107,7 +122,7 @@ export default function FeaturedProjects() {
                       : "xl:grid-cols-[.86fr_1.14fr]"
                   }`}
                 >
-                  {/* PROJECT INTRO — FIRST ON MOBILE */}
+                  {/* PROJECT INTRO */}
 
                   <div
                     className={`order-1 px-5 pb-4 pt-6 sm:px-8 sm:pb-5 sm:pt-8 lg:p-9 ${
@@ -140,7 +155,7 @@ export default function FeaturedProjects() {
                     </p>
                   </div>
 
-                  {/* DASHBOARD — SECOND ON MOBILE */}
+                  {/* DASHBOARD */}
 
                   <div
                     className={`relative order-2 border-slate-400/10 p-4 sm:p-6 ${
@@ -164,7 +179,9 @@ export default function FeaturedProjects() {
                           />
 
                           <span className="font-mono text-[6px] uppercase tracking-[0.12em] text-slate-600 sm:text-[7px] sm:tracking-[0.14em]">
-                            Power BI • Project {project.number}
+                            {project.number === "04"
+                              ? "Microsoft Fabric • Project 04"
+                              : `Power BI • Project ${project.number}`}
                           </span>
                         </div>
                       </div>
@@ -172,7 +189,7 @@ export default function FeaturedProjects() {
                       <div className="p-2 sm:p-3">
                         <PortfolioImage
                           src={media.hero}
-                          alt={`${project.title} Power BI dashboard`}
+                          alt={`${project.title} showcase`}
                           label={`Project ${project.number}`}
                           aspectClass="aspect-[16/9]"
                           priority={index === 0}
@@ -188,7 +205,9 @@ export default function FeaturedProjects() {
                         />
 
                         <span className="text-[7px] text-slate-500 sm:text-[8px]">
-                          Premium dashboard experience
+                          {project.number === "04"
+                            ? "Enterprise data platform & analytics"
+                            : "Premium dashboard experience"}
                         </span>
                       </div>
 
@@ -198,7 +217,7 @@ export default function FeaturedProjects() {
                     </div>
                   </div>
 
-                  {/* DETAILS — THIRD ON MOBILE */}
+                  {/* DETAILS */}
 
                   <div
                     className={`order-3 px-5 pb-6 pt-3 sm:px-8 sm:pb-8 sm:pt-4 lg:p-9 ${

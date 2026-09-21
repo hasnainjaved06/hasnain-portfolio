@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -100,7 +100,6 @@ type Project = {
   pipeline?: PipelineStep[];
   spotlight?: ProjectSpotlight;
   embedUrl?: string;
-  githubUrl?: string;
 };
 
 const projects: Record<string, Project> = {
@@ -109,7 +108,7 @@ const projects: Record<string, Project> = {
     number: "01",
     title: "Corporate Finance & FP&A Command Center",
     shortTitle: "Finance & FP&A",
-    category: "Financial Analytics â€¢ Power BI â€¢ SQL",
+    category: "Financial Analytics • Power BI • SQL",
 
     description:
       "A multi-page financial analytics solution designed to bring executive reporting, financial statements, working-capital analysis and scenario forecasting into one structured Power BI experience.",
@@ -148,7 +147,7 @@ const projects: Record<string, Project> = {
             "Base, optimistic and pessimistic planning perspectives.",
         },
         {
-          value: "2024â€“26",
+          value: "2024–26",
           label: "Planning Calendar",
           detail:
             "Dedicated date model supporting historical and forward-looking analysis.",
@@ -318,7 +317,7 @@ const projects: Record<string, Project> = {
     number: "02",
     title: "Pakistan ATM Performance Dashboard",
     shortTitle: "ATM Performance",
-    category: "Banking Analytics â€¢ Power BI â€¢ DAX",
+    category: "Banking Analytics • Power BI • DAX",
 
     description:
       "A banking analytics dashboard designed to evaluate ATM transaction activity, revenue performance and operational patterns through an executive-friendly Power BI experience.",
@@ -508,7 +507,7 @@ const projects: Record<string, Project> = {
     title: "Customer Growth Analytics",
     shortTitle: "Customer Growth",
     category:
-      "Customer Analytics â€¢ Python â€¢ SQL Server â€¢ Power BI",
+      "Customer Analytics • Python • SQL Server • Power BI",
 
     description:
       "An end-to-end customer analytics solution built across more than half a million source records to connect revenue performance, purchasing behavior, customer value, segmentation, retention and churn risk through Python, SQL Server and Power BI.",
@@ -711,31 +710,31 @@ const projects: Record<string, Project> = {
 
       {
         name: "Customer Features",
-        rows: "93,358 Ã— 34",
+        rows: "93,358 × 34",
         detail: "Engineered customer analytical features",
         layer: "Analytical",
       },
       {
         name: "RFM Segments",
-        rows: "93,358 Ã— 25",
+        rows: "93,358 × 25",
         detail: "Recency, frequency and monetary segmentation",
         layer: "Analytical",
       },
       {
         name: "CLV Analysis",
-        rows: "93,358 Ã— 32",
+        rows: "93,358 × 32",
         detail: "Customer lifetime-value analytical output",
         layer: "Analytical",
       },
       {
         name: "Churn Risk",
-        rows: "93,358 Ã— 27",
+        rows: "93,358 × 27",
         detail: "Customer churn and risk features",
         layer: "Analytical",
       },
       {
         name: "Cohort Retention",
-        rows: "219 Ã— 6",
+        rows: "219 × 6",
         detail: "Long-form cohort-retention output",
         layer: "Analytical",
       },
@@ -776,221 +775,6 @@ const projects: Record<string, Project> = {
   },
 };
 
-
-projects["enterprise-sales-inventory-intelligence"] = {
-  slug: "enterprise-sales-inventory-intelligence",
-  number: "04",
-  title: "Enterprise Sales & Inventory Intelligence Platform",
-  shortTitle: "Enterprise Sales Intelligence",
-  category:
-    "Microsoft Fabric • Data Engineering • Direct Lake • Power BI",
-
-  description:
-    "A production-style Microsoft Fabric data engineering and analytics platform connecting SQL Server ingestion, Fabric Data Factory, OneLake Medallion Architecture, PySpark transformation, data quality, incremental processing, Fabric Warehouse, Direct Lake semantic modeling and interactive Power BI reporting.",
-
-  overview:
-    "This project was developed as a complete Microsoft Fabric platform rather than a standalone dashboard. Operational data flows from SQL Server through Fabric Data Factory into OneLake, progresses through Bronze, Silver and Gold engineering layers, passes data-quality, reconciliation and audit controls, is served through Fabric Warehouse and a Direct Lake semantic model, and is finally consumed through an interactive four-page Power BI reporting experience.",
-
-  heroImage:
-    "/projects/fabric-enterprise-sales/showcase.png",
-
-  embedUrl:
-    "https://app.fabric.microsoft.com/view?r=eyJrIjoiMGMxZmNhNGUtNGMzYy00ZDdmLWFmOTktNGFlMjhhZTI4OTA0IiwidCI6ImMxMzdiNGU2LTUyM2UtNGE5Ny04ZjRmLWU5YWE0MmRkMDU1YiJ9&pageName=ba28dade80ab02042b49",
-
-  githubUrl:
-    "https://github.com/hasnainjaved06/microsoft-fabric-enterprise-data-platform",
-
-  spotlight: {
-    eyebrow: "Microsoft Fabric Enterprise Architecture",
-    title: "An End-to-End Data Platform Built Beyond the Dashboard.",
-    description:
-      "The defining feature of this case study is the engineering architecture behind the reporting layer. The solution combines ingestion, Medallion processing, PySpark transformation, dimensional modeling, data-quality controls, auditability, reconciliation, Warehouse serving, Direct Lake semantic modeling and operational monitoring inside Microsoft Fabric.",
-
-    stats: [
-      {
-        value: "3",
-        label: "Medallion Layers",
-        detail:
-          "Bronze, Silver and Gold layers separate raw ingestion, governed transformation and business-ready analytics.",
-      },
-      {
-        value: "6",
-        label: "Pipeline Stages",
-        detail:
-          "The master pipeline controls ingestion, transformation, data quality, Gold modeling, audit and Warehouse refresh.",
-      },
-      {
-        value: "11",
-        label: "Gold Model Tables",
-        detail:
-          "Dimensions, bridge structures and fact tables support enterprise analytical reporting.",
-      },
-      {
-        value: "4",
-        label: "BI Experiences",
-        detail:
-          "Executive Sales, Product & Inventory, Customer & Store and Platform Monitoring.",
-      },
-    ],
-
-    items: [
-      {
-        title: "Fabric Data Factory",
-        description:
-          "Pipeline-driven ingestion brings operational SQL Server data into the Microsoft Fabric environment.",
-      },
-      {
-        title: "Medallion Architecture",
-        description:
-          "Bronze preserves source fidelity, Silver standardizes and validates data, and Gold provides business-ready analytical structures.",
-      },
-      {
-        title: "Data Quality & Reconciliation",
-        description:
-          "Dedicated control tables capture validation outcomes, audit history, reconciliation status and incremental-processing state.",
-      },
-      {
-        title: "Incremental Processing",
-        description:
-          "Watermark-controlled processing reduces unnecessary reloads and creates a scalable recurring-load framework.",
-      },
-      {
-        title: "Fabric Warehouse & Direct Lake",
-        description:
-          "Curated analytical structures are served through Fabric Warehouse and consumed through a governed Direct Lake semantic model.",
-      },
-      {
-        title: "Engineering Observability",
-        description:
-          "Pipeline health, data quality, reconciliation and freshness measures are surfaced directly in the Platform Monitoring report page.",
-      },
-    ],
-  },
-
-  screenshots: [
-    {
-      src:
-        "/projects/fabric-enterprise-sales/page-01-executive-sales.png",
-      title: "Executive Sales",
-      description:
-        "Executive commercial intelligence combining revenue, profitability, order activity, customer performance, product contribution, territory mix and promotional impact.",
-    },
-    {
-      src:
-        "/projects/fabric-enterprise-sales/page-02-product-inventory.png",
-      title: "Product & Inventory",
-      description:
-        "Product and stock intelligence covering inventory value, quantity on hand, stock health, reorder exposure and product-level inventory performance.",
-    },
-    {
-      src:
-        "/projects/fabric-enterprise-sales/page-03-customer-store.png",
-      title: "Customer & Store",
-      description:
-        "Customer and location analytics connecting active customers, order behavior, revenue per customer, store performance and market opportunities.",
-    },
-    {
-      src:
-        "/projects/fabric-enterprise-sales/page-04-platform-monitoring.png",
-      title: "Platform Monitoring",
-      description:
-        "Engineering observability covering audit records, processing success, data quality, reconciliation, execution history and data freshness.",
-    },
-  ],
-
-  tools: [
-    "Microsoft Fabric",
-    "Fabric Data Factory",
-    "OneLake",
-    "Lakehouse",
-    "PySpark",
-    "Fabric Notebooks",
-    "Fabric Warehouse",
-    "SQL",
-    "Direct Lake",
-    "DAX",
-    "Power BI",
-    "Microsoft Entra",
-  ],
-
-  capabilities: [
-    "End-to-End Fabric Architecture",
-    "Bronze / Silver / Gold Medallion Design",
-    "Pipeline Orchestration",
-    "PySpark Transformation",
-    "Data Quality Framework",
-    "Incremental Watermark Processing",
-    "Audit & Reconciliation",
-    "Dimensional Modeling",
-    "Fabric Warehouse Serving",
-    "Direct Lake Semantic Modeling",
-    "Business Intelligence",
-    "Platform Monitoring",
-  ],
-
-  objectives: [
-    "Build a complete Microsoft Fabric platform that separates operational ingestion, engineering transformation, analytical serving and business intelligence.",
-    "Implement governed Bronze, Silver and Gold processing instead of loading raw operational data directly into reporting.",
-    "Introduce data-quality, audit, reconciliation and watermark controls so the engineering platform is observable and repeatable.",
-    "Create a reusable Gold dimensional model and governed Direct Lake semantic layer for consistent enterprise analytics.",
-  ],
-
-  process: [
-    {
-      number: "01",
-      title: "Source Ingestion",
-      description:
-        "Connected the WideWorldImporters SQL Server source and orchestrated pipeline-driven ingestion through Fabric Data Factory.",
-    },
-    {
-      number: "02",
-      title: "Medallion Engineering",
-      description:
-        "Processed data through Bronze, Silver and Gold Lakehouse layers using Fabric notebooks and PySpark transformations.",
-    },
-    {
-      number: "03",
-      title: "Governance Controls",
-      description:
-        "Implemented data-quality validation, incremental watermarks, pipeline audit logging and source-to-target reconciliation.",
-    },
-    {
-      number: "04",
-      title: "Warehouse & Semantic Model",
-      description:
-        "Exposed curated analytical data through Fabric Warehouse and built a Direct Lake semantic model with reusable relationships and measures.",
-    },
-    {
-      number: "05",
-      title: "Power BI Delivery",
-      description:
-        "Delivered four connected reporting experiences covering business performance, inventory, customers, stores and platform reliability.",
-    },
-  ],
-
-  highlights: [
-    {
-      title: "Enterprise Fabric Architecture",
-      description:
-        "A complete SQL Server-to-Power BI implementation using Data Factory, OneLake, Lakehouse, Warehouse and Direct Lake.",
-    },
-    {
-      title: "Data Engineering Controls",
-      description:
-        "Data quality, reconciliation, audit logging and watermark processing introduce production-style reliability into the platform.",
-    },
-    {
-      title: "Governed Analytical Model",
-      description:
-        "A Gold dimensional model and Direct Lake semantic layer provide reusable enterprise reporting logic.",
-    },
-    {
-      title: "Business + Platform Monitoring",
-      description:
-        "Commercial reporting and engineering observability are delivered within the same Power BI reporting experience.",
-    },
-  ],
-};
 export function generateStaticParams() {
   return Object.keys(projects).map((slug) => ({
     slug,
@@ -1117,18 +901,6 @@ export default async function ProjectDetailPage({
                   />
                 </a>
 
-                {project.githubUrl && (
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="btn-secondary w-full px-2.5 text-center text-[0.7rem] sm:w-auto sm:px-5 sm:text-[0.92rem]"
-                  >
-                    <ArrowRight size={14} />
-                    View GitHub Repository
-                  </a>
-                )}
-
                 <Link
                   href="/contact"
                   className="btn-secondary w-full px-2.5 text-center text-[0.7rem] sm:w-auto sm:px-5 sm:text-[0.92rem]"
@@ -1170,148 +942,6 @@ export default async function ProjectDetailPage({
         </div>
       </section>
 
-      {/* =====================================================
-          PROJECT 04 — FABRIC ARCHITECTURE
-      ===================================================== */}
-
-      {project.slug ===
-        "enterprise-sales-inventory-intelligence" && (
-        <section className="border-y border-slate-400/10 bg-white/[0.01] py-9 sm:py-12 lg:py-14">
-          <div className="site-container">
-            <div className="max-w-[850px]">
-              <div className="eyebrow">
-                Solution Architecture
-              </div>
-
-              <h2 className="section-title">
-                Inside the{" "}
-                <span className="gradient-text">
-                  Microsoft Fabric Platform.
-                </span>
-              </h2>
-
-              <p className="section-description">
-                The reporting layer is supported by a complete
-                enterprise data engineering architecture spanning
-                ingestion, OneLake storage, Medallion processing,
-                governance controls, Fabric Warehouse, Direct Lake and
-                Power BI.
-              </p>
-            </div>
-
-            <div className="mt-7 overflow-hidden rounded-[22px] border border-amber-300/15 bg-[#050b10] p-2 shadow-[0_28px_100px_rgba(0,0,0,.38)] sm:mt-8 sm:rounded-[28px] sm:p-3">
-              <div className="relative aspect-[16/9] overflow-hidden rounded-[16px] sm:rounded-[22px]">
-                <Image
-                  src="/projects/fabric-enterprise-sales/architecture.png"
-                  alt="Enterprise Sales and Inventory Intelligence Microsoft Fabric architecture"
-                  fill
-                  sizes="100vw"
-                  className="object-contain"
-                />
-              </div>
-            </div>
-
-            <div className="mt-4 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                ["Source", "SQL Server / WideWorldImporters"],
-                ["Engineering", "Data Factory + OneLake + PySpark"],
-                ["Serving", "Fabric Warehouse + Direct Lake"],
-                ["Consumption", "Power BI + Platform Monitoring"],
-              ].map(([label, value]) => (
-                <article
-                  key={label}
-                  className="rounded-xl border border-slate-400/10 bg-white/[0.015] px-4 py-3"
-                >
-                  <p className="font-mono text-[7px] uppercase tracking-[0.14em] text-amber-300">
-                    {label}
-                  </p>
-
-                  <p className="mt-2 text-[9px] font-medium leading-5 text-slate-300">
-                    {value}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-      {/* =====================================================
-          PROJECT 04 — FABRIC LINEAGE
-      ===================================================== */}
-
-      {project.slug ===
-        "enterprise-sales-inventory-intelligence" && (
-        <section className="border-y border-slate-400/10 bg-[#050b12] py-9 sm:py-12 lg:py-14">
-          <div className="site-container">
-            <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-              <div className="max-w-[840px]">
-                <div className="eyebrow">
-                  Fabric Architecture & Lineage
-                </div>
-
-                <h2 className="section-title">
-                  From Operational Data to{" "}
-                  <span className="gradient-text">
-                    Business Intelligence.
-                  </span>
-                </h2>
-
-                <p className="section-description">
-                  A compact end-to-end view of how source data moves
-                  through ingestion, OneLake Medallion processing,
-                  orchestration, analytical serving, Direct Lake
-                  semantic modeling and Power BI consumption.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-amber-300/10 bg-amber-300/[0.025] px-4 py-3">
-                <p className="font-mono text-[7px] uppercase tracking-[0.14em] text-amber-300">
-                  End-to-End Lineage
-                </p>
-
-                <p className="mt-1 text-[9px] font-semibold text-white">
-                  SQL Server → Fabric → Power BI
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-7 overflow-hidden rounded-[22px] border border-amber-300/15 bg-black/30 p-2 shadow-[0_30px_100px_rgba(0,0,0,.45)] sm:mt-8 sm:rounded-[28px] sm:p-3">
-              <div className="relative aspect-[16/9] overflow-hidden rounded-[16px] bg-[#02070c] sm:rounded-[22px]">
-                <Image
-                  src="/projects/fabric-enterprise-sales/fabric-lineage.png"
-                  alt="Microsoft Fabric end-to-end architecture and lineage for the Enterprise Sales and Inventory Intelligence Platform"
-                  fill
-                  sizes="100vw"
-                  className="object-contain"
-                />
-              </div>
-            </div>
-
-            <div className="mt-4 grid grid-cols-2 gap-2.5 lg:grid-cols-5">
-              {[
-                ["Data Quality", "Validation rules and quality controls"],
-                ["Incremental", "Watermark-driven efficient processing"],
-                ["Reconciliation", "Source-to-target validation"],
-                ["Monitoring", "Audit history and pipeline visibility"],
-                ["Identity", "Workspace identity and access control"],
-              ].map(([title, detail]) => (
-                <article
-                  key={title}
-                  className="rounded-xl border border-slate-400/10 bg-white/[0.015] px-3 py-3 sm:px-4"
-                >
-                  <p className="text-[8px] font-semibold text-amber-200 sm:text-[9px]">
-                    {title}
-                  </p>
-
-                  <p className="mt-1.5 text-[7px] leading-4 text-slate-500 sm:text-[8px]">
-                    {detail}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
       {/* =====================================================
           PROJECT SNAPSHOT
       ===================================================== */}
@@ -1383,7 +1013,7 @@ export default async function ProjectDetailPage({
       </section>
 
       {/* =====================================================
-          PROJECT-SPECIFIC DEEP DIVE â€” PROJECTS 01 & 02
+          PROJECT-SPECIFIC DEEP DIVE — PROJECTS 01 & 02
       ===================================================== */}
 
       {project.spotlight && (
@@ -1458,7 +1088,7 @@ export default async function ProjectDetailPage({
       )}
 
       {/* =====================================================
-          PROJECT SCALE â€” PROJECT 03
+          PROJECT SCALE — PROJECT 03
       ===================================================== */}
 
       {project.scaleStats &&
@@ -1824,7 +1454,7 @@ export default async function ProjectDetailPage({
                   />
 
                   <span className="font-mono text-[6px] uppercase tracking-[0.12em] text-slate-600 sm:text-[7px] sm:tracking-[0.14em]">
-                    Live Fabric Report â€¢ Case Study {project.number}
+                    Live Fabric Report • Case Study {project.number}
                   </span>
                 </div>
               </div>
@@ -2097,7 +1727,3 @@ export default async function ProjectDetailPage({
     </main>
   );
 }
-
-
-
-

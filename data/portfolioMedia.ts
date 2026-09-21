@@ -18,6 +18,7 @@ type PortfolioMedia = {
   finance: ProjectMedia;
   atm: ProjectMedia;
   customerGrowth: ProjectMedia;
+  fabricEnterpriseSales: ProjectMedia;
 };
 
 export const portfolioMedia: PortfolioMedia = {
@@ -114,5 +115,43 @@ export const portfolioMedia: PortfolioMedia = {
     ],
 
     embedUrl: null,
+  },
+
+  fabricEnterpriseSales: {
+    hero: "/projects/fabric-enterprise-sales/showcase.png",
+
+    screenshots: [
+      {
+        src:
+          "/projects/fabric-enterprise-sales/page-01-executive-sales.png",
+        alt:
+          "Enterprise Sales and Inventory Intelligence Executive Sales premium dashboard showcase",
+        label: "Executive Sales",
+      },
+      {
+        src:
+          "/projects/fabric-enterprise-sales/page-02-product-inventory.png",
+        alt:
+          "Enterprise Sales and Inventory Intelligence Product and Inventory premium dashboard showcase",
+        label: "Product & Inventory",
+      },
+      {
+        src:
+          "/projects/fabric-enterprise-sales/page-03-customer-store.png",
+        alt:
+          "Enterprise Sales and Inventory Intelligence Customer and Store premium dashboard showcase",
+        label: "Customer & Store",
+      },
+      {
+        src:
+          "/projects/fabric-enterprise-sales/page-04-platform-monitoring.png",
+        alt:
+          "Enterprise Sales and Inventory Intelligence Platform Monitoring premium dashboard showcase",
+        label: "Platform Monitoring",
+      },
+    ],
+
+    embedUrl:
+      "https://app.fabric.microsoft.com/view?r=eyJrIjoiMGMxZmNhNGUtNGMzYy00ZDdmLWFmOTktNGFlMjhhZTI4OTA0IiwidCI6ImMxMzdiNGU2LTUyM2UtNGE5Ny04ZjRmLWU5YWE0MmRkMDU1YiJ9&pageName=ba28dade80ab02042b49",
   },
 };
