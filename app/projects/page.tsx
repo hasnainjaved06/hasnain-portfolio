@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 
 import Link from "next/link";
 
@@ -49,6 +49,20 @@ export default function ProjectsPage() {
   const featuredProjects = projects.filter(
     (project) => project.featured
   );
+
+  const mediaBySlug = {
+    "corporate-finance-fpa-command-center":
+      portfolioMedia.finance,
+
+    "pakistan-atm-performance":
+      portfolioMedia.atm,
+
+    "customer-growth-analytics":
+      portfolioMedia.customerGrowth,
+
+    "enterprise-sales-inventory-intelligence":
+      portfolioMedia.fabricEnterpriseSales,
+  } as const;
 
   return (
     <main>
@@ -229,8 +243,7 @@ export default function ProjectsPage() {
 
               <p className="section-description">
                 Each project combines analytical architecture,
-                business KPIs and a complete Power BI reporting
-                experience.
+                business KPIs and a complete reporting experience.
               </p>
             </div>
 
@@ -246,7 +259,7 @@ export default function ProjectsPage() {
                 </p>
 
                 <p className="mt-1 text-[10px] font-semibold text-white">
-                  {featuredProjects.length} Complete BI Case Studies
+                  {featuredProjects.length} Complete Case Studies
                 </p>
               </div>
             </div>
@@ -257,13 +270,13 @@ export default function ProjectsPage() {
           <div className="mt-8 space-y-7">
             {featuredProjects.map((project, index) => {
               const media =
-                project.slug ===
-                "corporate-finance-fpa-command-center"
-                  ? portfolioMedia.finance
-                  : project.slug ===
-                      "pakistan-atm-performance"
-                    ? portfolioMedia.atm
-                    : portfolioMedia.customerGrowth;
+                mediaBySlug[
+                  project.slug as keyof typeof mediaBySlug
+                ];
+
+              if (!media) {
+                return null;
+              }
 
               const copyColumnClass =
                 index % 2 === 0
@@ -340,7 +353,9 @@ export default function ProjectsPage() {
                             />
 
                             <span className="font-mono text-[6px] uppercase tracking-[0.12em] text-slate-600 sm:text-[7px] sm:tracking-[0.14em]">
-                              Power BI • Project {project.number}
+                              {project.number === "04"
+                                ? "Microsoft Fabric • Project 04"
+                                : `Power BI • Project ${project.number}`}
                             </span>
                           </div>
                         </div>
@@ -396,7 +411,9 @@ export default function ProjectsPage() {
                           />
 
                           <span className="truncate text-[7px] text-slate-500 sm:text-[8px]">
-                            Complete dashboard experience
+                            {project.number === "04"
+                              ? "Enterprise data platform & analytics"
+                              : "Complete dashboard experience"}
                           </span>
                         </div>
 
